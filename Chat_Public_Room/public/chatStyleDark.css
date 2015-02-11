@@ -1,0 +1,205 @@
+body{
+    font-family: Helvetica,Arial, sans-serif;
+    font-size: 15px;
+    background: #3C3F41;
+    border: 1px #f7f7f7 solid;
+/*    border-radius: 5px;*/
+    height: 550px;
+    width: 278px;
+    color:#f7f7f7;
+    padding-left: 15px;
+/*    padding-top: 15px;*/
+}
+
+h1{
+    font-size: 20px;
+    color: #f7f7f7;
+    text-align: center;
+}
+
+h2{
+    font-size: 18px;
+    color: #f7f7f7;
+    padding-left: 10px;
+}
+
+#setNick, #setAccount{
+    padding-left: 15px;
+    border-radius: 2px;
+}
+
+#chat{
+    height: 432px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+#chat p{
+    color: #f7f7f7;
+    float:left;
+}
+#contentWrap{
+    background: #3C3F41;
+    display: none;
+    font-size: 11px;
+
+}
+#chatWrap{
+    background: #3C3F41;
+    float: left;
+    border: 1px solid #f7f7f7;
+    height: 430px;
+/*    border-radius: 5px;*/
+    font-size: 12px;
+    width: 230px;
+}
+#chatWrap p {
+    color:red;
+}
+
+#nickWrap p{
+    padding-left: 8px;
+    color:#f7f7f7;
+}
+
+
+
+#nickWrap input[type=submit]
+{
+	padding: 5px 10px;
+	font-weight: bold;
+	background: #f7f7f7;
+	color:#374343;
+	font-variant: small-caps;
+	font-size: small;
+	border:0px;
+	border-bottom:1px solid #374343;
+/*	border-radius: 2px;*/
+    float: right;
+    margin-right: 15px;
+
+}
+
+#nickWrap input[type=submit]:hover
+{
+	background: #374343;
+	color: #f7f7f7;
+}
+
+#nickname,
+#nickpass,
+#nicknameAc,
+#nickpassAc
+{
+    border-radius: 4px;
+}
+
+input{
+    text-align: center;
+}
+
+#send-message input{
+    text-align: left;
+}
+
+#send-message{
+
+    padding-left: 0px;
+    size: 25px;
+}
+
+#infoToChat{
+    font-size: 9px;
+    color: #f7f7f7 !important;
+}
+
+.error{
+    color: red;
+}
+
+.whisper{
+    color: yellow;
+    font-style: italic;
+}
+
+#message{
+	border-radius: 4px;
+    padding-left: 0px;
+    size: 25px;
+    height: 23px;
+    width: 230px;
+    overflow: hidden;
+    padding-bottom: 2px;
+}
+
+#title{
+    font: bold;
+}
+
+.msg{
+    display: flex;
+    height: auto;
+    width: 230px;
+/*
+    color: black;
+    background: white;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(black, 0.2);
+*/
+}
+
+
+::-webkit-scrollbar {
+    -webkit-overflow-scrolling: touch;
+    width: 5px;
+}
+
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #f7f7f7;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: #f7f7f7;
+}
+
+#btnProfile
+{
+    float: left;
+    padding: 5px 10px;
+	font-weight: bold;
+	background: #f7f7f7;
+	color:#374343;
+	font-variant: small-caps;
+	font-size: small;
+	border:0px;
+	border-bottom:1px solid #374343;
+	border-radius: 2px;
+    margin-right: 15px;
+}
+
+#btnLogout
+{
+    float: right;
+    padding: 5px;
+	font-weight: bold;
+	background: #f7f7f7;
+	color:#374343;
+	font-variant: small-caps;
+	font-size: small;
+	border:0px;
+	border-bottom:1px solid #374343;
+	border-radius: 2px;
+}
+
+
+

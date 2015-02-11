@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="Default-Style" content="Dark">
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="joint/joint.css" />
+		<link rel="stylesheet" href="css/Amalia.css" title="Dark"/>
+        <link rel="Alternate stylesheet" href="css/Amalia_light.css" title="Light"/>
+
+
+
+
+		<!-- Bibliotecas -->
+        <script src="joint/joint.js"></script>
+		<script src="jQuery/jquery-1.10.2.js"></script>
+		<script src="joint/geometry.js"></script>
+
+		<script src="joint/joint.shapes.uml.js"></script>
+		<script src="Blob.js-master/Blob.js"></script>
+		<script src="FileSaver.js-master/FileSaver.js"></script>
+
+		<!-- Modelos -->
+		<script src="modelos/Amalia.js"></script>
+
+		<!-- Controlador -->
+		<script src="controladores/ControladorAmalia.js"></script>
+
+
+		<!-- ide -->
+		<script src="ide/ideDiagramaClasses.js"></script>
+
+		<!-- Right-Click Block-->
+		<script language="javascript">
+			document.onmousedown=disableclick;
+			status="No need for right-click! All options are available by double-click!";
+			function disableclick(event)
+			{
+			  if(event.button==2)
+			   {
+				alert(status);
+				return false;
+			   }
+			}
+		</script>
+
+		<!-- script de controlo dos menus dos botões-->
+		<script type="text/javascript">
+
+            var timeout         = 500;
+            var closetimer		= 0;
+            var ddmenuitem      = 0;
+
+            // open hidden layer
+            function mopen(id)
+            {
+                // cancel close timer
+                mcancelclosetime();
+
+                // close old layer
+                if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+                // get new layer and show it
+                ddmenuitem = document.getElementById(id);
+                ddmenuitem.style.visibility = 'visible';
+
+            }
+            // close showed layer
+            function mclose()
+            {
+                if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+            }
+
+            // go close timer
+            function mclosetime()
+            {
+                closetimer = window.setTimeout(mclose, timeout);
+            }
+
+            // cancel close timer
+            function mcancelclosetime()
+            {
+                if(closetimer)
+                {
+                    window.clearTimeout(closetimer);
+                    closetimer = null;
+                }
+            }
+
+            // close layer when click-out
+            document.onclick = mclose;
+            // -->
+            </script>
+
+
+		<script>
+			function download(filename, text) {
+				console.log("Função Download");
+   				var pom = document.createElement('a');
+   				pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    			pom.setAttribute('download', filename);
+    			pom.click();
+			}
+		</script>
+
+
+		<title>Domain Model</title>
+		<meta name="description" content="ide para diagramas de Classe">
+		<meta name="author" content="jorge et al.">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body onload="set_style_from_cookie()" oncontextmenu="return false">
+		<div>
+			<header>
+				<h1 id="modelDomainh">Domain Model</h1>
+				             <p id="p0h"><b>A</b>gile <b>M</b>odel-driven <b>A</b>pp<b>LI</b>c<b>A</b>tion Development Method and Tools</p>
+
+			</header>
+			<p></p>
+			<div id="controloDiagramaClasses">
+                <ul id="sddm">
+                    <li><input id="btnVoltarInicio" type="button" value="<" />
+                    </li>
+                    <li><input id="btnClose" type="button" value="Close Project" />
+                    </li>
+                      <li>
+                       <input id="btnSaveProject" type="button" value="Save Project"  onmouseover="mopen('m1')" onmouseout="mclosetime()"/>
+                        <div id="m1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                            <input id="btnGravarProjeto" type="button" value=" Save in Browser" />
+                            <input id="btnGuardarCasosUsoDisco" type="button" value="Save in File" />
+                        </div>
+                    </li>
+                    <li>
+                        <input id="btnthemes" type="button" value="Themes" onmouseover="mopen('m2')" onmouseout="mclosetime()"/>
+                        <div id="m2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                             <input id="btnChangeStyleLight" type="button" value="Light Theme" onclick="switch_style('Light');return false;"/>
+                    <input id="btnChangeStyleDark" type="button" value="Dark Theme" onclick="switch_style('Dark');return false"/>
+                        </div>
+                    </li>
+                    <li>
+                        <input id="btnlanguage" type="button" value="Languages" onmouseover="mopen('m3')" onmouseout="mclosetime()"/>
+                        <div id="m3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                        <input id="lng_english" type="button" value ="English"/>
+                        <input id="lng_portuguese" type="button" value="Português"/>
+                        </div>
+                    </li>
+                    <li>
+                        <input id="btnCallChat" type="button" class="button" onclick="javascript:void window.open('http://localhost:3000','1422053451651','width=310,height=590,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');return false;" value="Chat"/>
+                    </li>
+                </ul>
+			</div>
+
+        <div class="floating-menu" id="floatingMenu">
+				<h3>Toolbox</h3>
+				<input id="addClassGraph" type="image" src="img/Class.png" alt="Insert Class" width="39" height="48" title="Add Class">
+                <input id="addInterfaceGraph" type="image" src="img/Interface.png" alt="Insert Interface" width="39" height="48" title="Add Interface">
+                <input id="addAbstractGraph" type="image" src="img/Abstract.png" alt="Insert Abstract" width="39" height="48" title="Add Abstract">
+                <input id="makeZoomToFit" type="image" src="img/Zoom.png" alt="Zoom To Fit" width="48" height="48" title="Zoom to Fit">
+                <input id="clearDiagram" type="image" src="img/clean.png" alt="Clear Graph" width="48" height="48" title="Clear diagram">
+			</div>
+
+
+			     <div class="floating-tree" id="floatingTree">
+                <h3 id="floatingTreeh">Project Elements</h3>
+                <ol class="tree">
+							<li class="arvore">
+								<label id="arvoreC" for="folder1">Class</label> <input type="checkbox" id="folder1" />
+								<ol id="classeslista">
+								</ol>
+							</li>
+							<p></p>
+							<li class="arvore">
+								<label id="arvoreAb" for="folder2">Abstract Class</label> <input type="checkbox" id="folder2" />
+								<ol id ="abstractlista">
+								</ol>
+							</li>
+                            <p></p>
+				            <li class="arvore">
+								<label id="arvoreI" for="folder3">Interface</label> <input type="checkbox" id="folder3" />
+								<ol id ="interfacelista">
+								</ol>
+							</li>
+							<p></p>
+						</ol>
+
+            </div>
+
+			<!-- Placeholder para o modelo -->
+
+			<div id="modelo">
+        </div>
+			<!-- Dialogos -->
+			<!--dialogo para alterar os atributos da classe -->
+			<div id="dialogoAlteraClasse">
+     			<div>
+     			<form id=classeMostra>
+					<p>
+						<!--<label for="nomeDaClasse">Nome: </label>-->
+						<fieldset class="dialogo">
+						<legend id="dialogoAlteraClassel">Class name</legend>
+						<input id="nomeDaClasse" type="text" name="nomedaClasse" placeholder="Nome da Classe" />
+						<input id="btnLimparNome" type="button" value="x" />
+						<input id="idClasse" type="hidden" value="" />
+						</fieldset>
+					</p>
+					<fieldset id="atributosClasse">
+                        <legend><b id="atributosClasseb">Attributes</b><input id="btnAddAtributo" type="button" value="+" /> </legend>
+					</fieldset>
+					<fieldset id="metodosClasse">
+                        <legend><b id="metodosClasseb">Methods</b><input id="btnAddMetodo" type="button" value="+" /></legend>
+					</fieldset>
+					<p>
+						<input id="btnCancelarAlteraClasse" type="button" value="Cancel" />
+						<input type="submit" value="OK" />
+						<input id="btnEleminarAlterarClasse" type="button" value="Delete"/>
+					</p>
+					</form>
+				</div>
+			</div>
+
+			<!--dialogo para alterar a interface -->
+			<div id="dialogoAlteraInterface">
+     			<div>
+     			<form id="classes">
+					<p>
+						<!--<label for="nomeDaInterface">Nome: </label>-->
+						<fieldset class="dialogo">
+							<legend id= "dialogoAlteraInterfacel">Interface name</legend>
+						<input id="nomeDaInterface" type="text" name="nomeDaClasse" placeholder="Name of Class" focus/>
+						<input id="btnLimparNomeInt" type="button" value="x" />
+						<input id="idInterface" type="hidden" value="" />
+						</fieldset>
+					</p>
+					<fieldset id="metodosInterface">
+                        <legend><b id="metodosInterfaceb">Methods</b><input id="btnAddMetodoInt" type="button" value="+" /></legend>
+
+					</fieldset>
+					<p>
+						<input id="btnCancelarAlteraInterface" type="button" value="Cancel" />
+						<input type="submit" value="OK" />
+						<input id="btnEleminarAlterarInterface" type="button" value="Delete"/>
+					</p>
+					</form>
+				</div>
+			</div>
+			<!-- Dialogo para associações de classes -->
+			<div id="dialogoAssociaClasses">
+				<div>
+					<p>
+					<select id="cardCima">
+						<!--<option value=""></option>-->
+						<option value="1">1</option>
+						<option value="0..1">0..1</option>
+						<option value="*">*</option>
+						<option value="1..*">1..*</option>
+					</select>
+					<select id="ligarClasses">
+						<option id="ligarClassesh" value="h">Inheritance</option>
+						<option id="ligarClassesc" value="c">Composition</option>
+						<option id="ligarClassesa" value="a">Aggregation</option>
+						<option id="ligarClassess" value="s">Association</option>
+					</select>
+					<select id="cardBaixo">
+						<!--<option value=""></option>-->
+						<option value="1">1</option>
+						<option value="0..1">0..1</option>
+						<option value="*">*</option>
+						<option value="1..*">1..*</option>
+					</select>
+
+					</p>
+					<input id="elementoCimaId" type="hidden" name="elementoCimaId" value="" />
+					<input id="elementoBaixoId" type="hidden" name="elementoBaixoId" value="" />
+					<p>
+						<input id="btnCancelaLigacaoClasses" type="button" value="Cancel" />
+						<input id="btnLigaClasses" type="button"  value="Class Associate" />
+					</p>
+				</div>
+			</div>
+
+			<div id="dialogoFechaProjecto">
+                   <div>
+                    <p id="dialogoFechaProjectop"> Please save the project before closing. Do you wish to continue? </p>
+                        <input id="btnCancelaFecharProjeto" type="button" value="Cancel"/>
+                        <input id="btnFecharProjecto" type="button" value="Continue"/>
+                </div>
+                </div>
+
+                <div id="dialogoLimpaDiagrama">
+                   <div>
+                    <p id="dialogoLimpaDiagramap"> This action will remove all elements. Do you wish to continue? </p>
+                        <input id="btnCancelaLimpar" type="button" value="No"/>
+                        <input id="btnLimpar" type="button" value="Yes"/>
+                </div>
+                </div>
+
+
+
+			<footer>
+				<p id="foot">
+					AmaliaIDE v1.0 - 2015
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        	<meta http-equiv="Default-Style" content="Dark">
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="joint/joint.css" />
+		<link rel="stylesheet" href="css/Amalia.css" title="Dark"/>
+        	<link rel="Alternate stylesheet" href="css/Amalia_light.css" title="Light"/>
+		<!-- Bibliotecas -->
+        	<script src="joint/joint.js"></script>
+		<script src="jQuery/jquery-1.10.2.js"></script>
+		<script src="joint/geometry.js"></script>
+
+		<script src="joint/joint.shapes.uml.js"></script>
+		<script src="Blob.js-master/Blob.js"></script>
+		<script src="FileSaver.js-master/FileSaver.js"></script>
+
+		<!-- Modelos -->
+		<script src="modelos/Amalia.js"></script>
+
+		<!-- Controlador -->
+		<script src="controladores/ControladorAmalia.js"></script>
+
+		<!-- ide -->
+		<script src="ide/ideCasosUso.js"></script>
+
+		<!-- Right-Click Block-->
+		<script language="javascript">
+			document.onmousedown=disableclick;
+			status="No need for right-click! All options are available by double-click!";
+			function disableclick(event)
+			{
+			  if(event.button==2)
+			   {
+				alert(status);
+				return false;
+			   }
+			}
+		</script>
+
+		<!-- script de controlo dos menus dos botões-->
+		<script type="text/javascript">
+
+            var timeout         = 500;
+            var closetimer		= 0;
+            var ddmenuitem      = 0;
+
+            // open hidden layer
+            function mopen(id)
+            {
+                // cancel close timer
+                mcancelclosetime();
+
+                // close old layer
+                if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+                // get new layer and show it
+                ddmenuitem = document.getElementById(id);
+                ddmenuitem.style.visibility = 'visible';
+
+            }
+            // close showed layer
+            function mclose()
+            {
+                if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+            }
+
+            // go close timer
+            function mclosetime()
+            {
+                closetimer = window.setTimeout(mclose, timeout);
+            }
+
+            // cancel close timer
+            function mcancelclosetime()
+            {
+                if(closetimer)
+                {
+                    window.clearTimeout(closetimer);
+                    closetimer = null;
+                }
+            }
+
+            // close layer when click-out
+            document.onclick = mclose;
+            // -->
+            </script>
+
+
+		<title>Use Case Model</title>
+		<meta name="description" content="ide para modelar casos de uso">
+		<meta name="author" content="jorge et al.">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	</head>
+
+<!-- in body tag is insert onload for set the style with cookie-->
+	<body onload="set_style_from_cookie()" oncontextmenu="return false">
+			<header>
+				<h1 id="idUseCaseH">Use Case Model</h1>
+                <p id="p0h"><b>A</b>gile <b>M</b>odel-driven <b>A</b>pp<b>LI</b>c<b>A</b>tion Development Method and Tools</p>
+			</header>
+			<p></p>
+			<div id="controlCasosUso">
+                <ul id="sddm">
+                    <li><input id="btnVoltarInicio" type="button" value="<" />
+                    </li>
+                    <li><input id="btnClose" type="button" value="Close Project" />
+                    </li>
+                      <li>
+                       <input id="btnSaveProject" type="button" value="Save Project"  onmouseover="mopen('m1')" onmouseout="mclosetime()"/>
+                        <div id="m1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                            <input id="btnGravarProjeto" type="button" value=" Save in Browser" />
+                            <input id="btnGuardarCasosUsoDisco" type="button" value="Save in File" />
+                        </div>
+                    </li>
+                    <li>
+                        <input id="btnthemes" type="button" value="Themes" onmouseover="mopen('m2')" onmouseout="mclosetime()"/>
+                        <div id="m2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                             <input id="btnChangeStyleLight" type="button" value="Light Theme" onclick="switch_style('Light');return false;"/>
+                    <input id="btnChangeStyleDark" type="button" value="Dark Theme" onclick="switch_style('Dark');return false"/>
+                        </div>
+                    </li>
+                    <li>
+                        <input id="btnlanguage" type="button" value="Languages" onmouseover="mopen('m3')" onmouseout="mclosetime()"/>
+                        <div id="m3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                        <input id="lng_english" type="button" value ="English"/>
+                        <input id="lng_portuguese" type="button" value="Português"/>
+                        </div>
+                    </li>
+                </ul>
+			</div>
+
+
+
+        	<div class="floating-menu" id="floatingMenu">
+			<h3>Toolbox</h3>
+			<input id="addUseCaseGraph" type="image" src="img/UC.png" alt="Insert Use Case" width="48" height="48" title="Add Use Case">
+			<input id="addActorGraph" type="image" src="img/actor.png" alt="Insert Actor" width="48" height="48" title="Add Actor">
+			<input id="makeZoomToFit" type="image" src="img/Zoom.png" alt="Zoom To Fit" width="48" height="48" title="Zoom to Fit">
+			<input id="clearDiagram" type="image" src="img/clean.png" alt="Clear Graph" width="48" height="48" title="Clear diagram">
+		</div>
+
+            <div class="floating-tree" id="floatingTree">
+                <h3 id="floatingTreeh">Project Elements</h3>
+                <ol class="tree">
+							<li class="arvore">
+								<label id="arvoreU" for="folder1">Use Cases</label> <input type="checkbox" id="folder1" />
+								<ol id="casoslista">
+								</ol>
+							</li>
+							<p></p>
+							<li class="arvore">
+								<label id="arvoreA" for="folder2">Actors</label> <input type="checkbox" id="folder2" />
+								<ol id =atoreslista>
+								</ol>
+							</li>
+							<p></p>
+						</ol>
+            </div>
+
+            <!-- Paper location -->
+            <div id="modelo"></div>
+
+
+
+			<!-- Dialogo para mudar o nome do caso de uso -->
+			<div id="dialogo_casos_uso">
+     			<div>
+          			<form id="caso_uso">
+          				<p>
+          					<fieldset>
+          						<legend id="dialogo_casos_usol">Use Case:</legend>
+                                <input id="nomeCasoUso" name="Use Case Name" type="text" placeholder="Name of Use Case" />
+                                <input id="idCaso" type="hidden" value="" />
+                                </p>
+                                <label id="entityl" for="entity">Entity:</label>
+                                <input list="entityList" id="listaEntidades" autocomplete="off"/>
+                                <datalist id="entityList">
+                                     <!-- Local onde vai ficar a lista de classes disponíveis -->
+                                </datalist>
+							  </p>
+							  <input id="idlcrud1" class="optCheckbox" type="checkbox" name="lcrud" value="l" checked="checked">L
+							  <input id="idlcrud2" class="optCheckbox" type="checkbox" name="lcrud" value="c" checked="checked">C
+							  <input id="idlcrud3" class="optCheckbox" type="checkbox" name="lcrud" value="r" checked="checked">R
+							  <input id="idlcrud4" class="optCheckbox" type="checkbox" name="lcrud" value="u" checked="checked">U
+							  <input id="idlcrud5" class="optCheckbox" type="checkbox" name="lcrud" value="d" checked="checked">D
+							  <p></p>
+                                <label id="masterl" for="masterEntityList">Master Entity:</label>
+                                <input list="masterEntityList" id="listaEntidadesMaster" autocomplete="off" />
+                                <datalist id="masterEntityList" >
+                                      <!-- Local onde vai ficar a lista de classes disponíveis -->
+                                </datalist>
+          					</fieldset>
+          				</p>
+          				<p>
+
+          					<input type="submit" value="OK" />
+          					<input id="btnDeleteCasoUso" type="button" value="Delete"/>
+          				</p>
+          			</form>
+
+    			 </div>
+			</div>
+
+			<!-- Dialogo para mudar o nome do ator -->
+			<div id="dialogo_actor">
+     			<div>
+     				<form id="ator_nome">
+
+     					<fieldset>
+          						<legend id="dialogo_actorl">Actor name:</legend>
+     						<input id="nomeActor" name="nomeActor" type="text" placeholder="Name of Actor" />
+     						<input id="idActor" type="hidden" value="" />
+     					</fieldset>
+     					<p>
+
+     						<input id="btnChangeActorName" type="submit" value="Change" />
+     						<input id="btnDeleteActor" type="button" value="Delete"/>
+     					</p>
+     				</form>
+    			 </div>
+			</div>
+
+			<!-- Dialogo para definir include ou extends -->
+			<div id="dialogo_associa_casos">
+     			<div>
+     				<p> <label><input type="radio" name="ligaCasos" value="include" checked="checked" /> include </label></p>
+					<p> <label><input type="radio" name="ligaCasos" value="extends" /> extends </label></p>
+					<input id="elementoCimaId" type="hidden" name="elementoCimaId" value="" />
+					<input id="elementoBaixoId" type="hidden" name="elementoBaixoId" value="" />
+					<p>
+						<input id="cancelaLigacao" type="button" value="Cancel" />
+						<input id="ligacaoCasos" type="button"  value="Associate Use Cases" />
+					</p>
+    			 </div>
+			</div>
+
+            <div id="dialogoFechaProjecto">
+                   <div>
+                    <p id="dialogoFechaProjectop"> Please save the project before closing. Do you wish to continue? </p>
+                        <input id="btnCancelaFecharProjeto" type="button" value="Cancel"/>
+                        <input id="btnFecharProjecto" type="button" value="Continue"/>
+                </div>
+            </div>
+            <!--Dialo para ter a certeza que o utilizador quer limpar o paper-->
+            <div id="dialogoLimpaDiagrama">
+                   <div>
+                    <p id="dialogoLimpaDiagramap"> This action will remove all elements. Do you wish to continue? </p>
+                        <input id="btnCancelaLimpar" type="button" value="No"/>
+                        <input id="btnLimpar" type="button" value="Yes"/>
+                </div>
+                </div>
+			<footer>
+
+				<p id="foot">
+					AmaliaIDE v1.0 - 2015
+				</p>
+			</footer>
+	</body>
+</html>

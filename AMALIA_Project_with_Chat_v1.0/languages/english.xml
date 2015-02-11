@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+	<text id="title">Amalia Project - Modeling Tools</text>
+	<text id="welcome">Welcome Screen</text>
+	<text id="h1">Recent Projects</text>
+	<text id="dialogoCriaProjectop">Create a New Project</text>
+	<text id="dialogoCriaProjectopl">File name</text>
+	<text id="dialogoAbreProjetop" >Open Project from Browser</text>
+	<text id="dialogoAbreProjetol">Select Project to open:</text>
+	<text id="dialogoAbreProjectoDiscop">Open Project File</text>
+	<text id="dialogoExportProjetp">Export Project to XML</text>
+	<text id="dialogoExportProjetll">Select Project to export:</text>
+	<text id="dialogoEraseProjetp">Delete Project</text>
+	<text id="dialogoEraseProjetl">Select Project to delete:</text>
+	<text id="tipop">Use Case Diagram</text>
+	<text id="tipo2p">Domain Model</text>
+	<text id="tipo3p">Amália Project</text>
+	<text id="dialogoFechaProjectop">Please save the project before closing. Do you wish to continue?</text>
+	<text id="idUseCaseH">Use Case Model</text>
+	<text id="floatingTreeh">Project Elements</text>
+	<text id="arvoreU">Use Case</text>
+	<text id="arvoreA">Actors</text>
+	<text id="dialogo_casos_usol">Use Case:</text>
+	<text id="entityl">Entity:</text>
+	<text id="masterl">Master Entity:</text>
+	<text id="dialogo_actorl">Actor name:</text>
+	<text id="modelDomainh">Domain Model</text>
+	<text id="arvoreC">Class</text>
+	<text id="arvoreAb">Abstract Class</text>
+	<text id="arvoreI">Interface</text>
+	<text id="dialogoAlteraClassel">Class name</text>
+	<text id="atributosClassel"> Attributh</text>
+	<text id="metodosClassel">Methods</text>
+	<text id="dialogoAlteraInterfacel">Interface name</text>
+	<text id="ligarClassesh"> Inheritance</text>
+	<text id="ligarClassesc"> Composition</text>
+	<text id="ligarClassesa"> Aggregation</text>
+	<text id="ligarClassess"> Association</text>
+	<text id="texto1">Amália Project is a R&amp;D project taking place at the Higher School of Technology and Management of the Polytechnic Institute of Viana do Castelo.</text>
+	<text id="texto2">Amália stands for <b>A</b>gile <b>M</b>odel-driven <b>A</b>pp<b>LI</b>c<b>A</b>tion Development Method and Tools.</text>
+ 	<text id="texto3">Aditional info:</text>
+	<text id="texto4">Main Developers: Rui Silva and Domingos Gomes</text>
+	<text id="texto5">V1.0, February 2015</text>
+
+	<text id="dialogoLimpaDiagramap">  This action will remove all elements. Do you wish to continue?</text>
+    <text id="atributosClasseb">Attributes</text>
+	<text id="metodosClasseb">Methods</text>
+    <text id="metodosInterfaceb">Methods</text>
+	<button id="btnCreateProject">
+			<value>New Project</value>
+			<title>Start your new Project Here</title>
+	</button>
+	<button id="btnOpenProjectFromBrowser">
+			<value>Open Project</value>
+			<title>Load Project from browser</title>
+	</button>
+	<button id="btnOpenProjectFile">
+			<value>Open Project File</value>
+			<title>Load Project File</title>
+	</button>
+	<button id="btnExportProject">
+			<value>Export Project</value>
+			<title>Export Project From</title>
+	</button>
+	<button id="btnApagarProjecto">
+			<value>Delete Project </value>
+			<title>Delete Project in Browser</title>
+	</button>
+	<button id="btnCancelarCriarProjecto">
+			<value>Cancel</value>
+			<title></title>
+	</button>
+	<button id ="btnCriarProjecto">
+			<value>Create</value>
+			<title></title>
+	</button>
+	<button id="btnCancelarAbrirProjecto">
+			<value>Cancel</value>
+			<title></title>
+	</button>
+	<button id="btnAbrirProjecto">
+			<value>Open Project</value>
+			<title></title>
+	</button>
+	<button id="btnCancelaAbrirCasosDisco">
+			<value>Cancel</value>
+			<title></title>
+	</button>
+	<button id="btnCancelarExportarProjecto">
+			<value>Cancel</value>
+			<title></title>
+	</button>
+	<button id="btnExportarProjecto">
+			<value>Export Project</value>
+			<title></title>
+	</button>
+	<button id="btnCancelarEliminarProjecto">
+			<value>Cancel</value>
+			<title></title>
+	</button>
+	<button id="btnEliminarProjecto">
+			<value>Delete Project</value>
+			<title></title>
+	</button>
+	<button id="voltarPagPrincipal">
+            <value>Main Page</value>
+	        <title></title>
+	</button>
+	<button id="btnthemes">
+	    <value>Themes</value>
+	    <title></title>
+	</button>
+	<button id="btnChangeStyleLight">
+	    <value>Ligth Theme</value>
+	    <title></title>
+    </button>
+    <button id="btnChangeStyleDark">
+        <value>Dark Theme</value>
+        <title></title>
+    </button>
+    <button id="btnlanguage">
+        <value>Languages</value>
+        <title></title>
+    </button>
+    <button id="lng_english">
+        <value>English</value>
+        <title></title>
+    </button>
+    <button id="lng_portuguese">
+        <value>Português</value>
+        <title></title>
+    </button>
+    <button id="btnCancelaFecharProjeto">
+			<value>Cancel</value>
+        <title></title>
+    </button>
+    <button id="btnFecharProjecto">
+        <value>Continue</value>
+        <title></title>
+    </button>
+    <button id="btnClose">
+        <value>Close Project</value>
+        <title></title>
+    </button>
+    <button id="btnSaveProject">
+        <value>Save Project</value>
+        <title></title>
+    </button>
+    <button id="btnGravarProjeto">
+        <value>Save in Browser</value>
+        <title></title>
+    </button>
+    <button id="btnGuardarCasosUsoDisco">
+        <value>Save in File</value>
+        <title></title>
+    </button>
+    <button id="btnDeleteCasoUso">
+        <value>Delete</value>
+        <title></title>
+    </button>
+    <button id="btnDeleteActor">
+        <value>Delete</value>
+        <title></title>
+    </button>
+    <button id="cancelaLigacao">
+			<value>Cancel</value>
+        <title></title>
+    </button>
+    <button id="ligacaoCasos">
+        <value> Associate Use Cases</value>
+        <title></title>
+    </button>
+    <button id="btnCancelarAlteraClasse">
+			<value>Cancel</value>
+        <title></title>
+    </button>
+    <button id="btnAceitarAlterarClasse">
+        <value>OK</value>
+        <title></title>
+    </button>
+    <button id="btnEleminarAlterarClasse">
+        <value>Delete</value>
+        <title></title>
+    </button>
+    <button id="btnCancelarAlteraInterface">
+			<value>Cancel</value>
+        <title></title>
+    </button>
+    <button id="btnAceitarAlterarInterface">
+        <value>OK</value>
+        <title></title>
+    </button>
+    <button id="btnEleminarAlterarInterface">
+        <value>Delete</value>
+        <title></title>
+    </button>
+    <button id="btnCancelaLigacaoClasses">
+			<value>Cancel</value>
+        <title></title>
+    </button>
+    <button id="btnLigaClasses">
+        <value>Class Associate</value>
+        <title></title>
+    </button>
+    <button id="btnCancelaLimpar">
+        <value>No</value>
+        <title></title>
+    </button>
+    <button id="btnLimpar">
+        <value>Yes</value>
+        <title></title>
+    </button>
+    <button id="btnChangeActorName">
+    	<value>Change</value>
+    	<title></title>
+    </button>
+	<input id="nomeProjecto">Project Name</input>
+	<input id="nomeCasoUso">Name of Use Case</input>
+	<input id="nomeActor">Name of Actor</input>
+	<input id="nomeDaClasse">Name of Class</input>
+	<input id="nomeDaInterface">Name of Class</input>
+	<graph id="addUseCaseGraph">
+	    <alt>Insert Use Case</alt>
+	    <title>Add Use Case</title>
+	</graph>
+	<graph id="addActorGraph">
+	    <alt>Insert Actor</alt>
+	    <title>Add Actor</title>
+	</graph>
+	<graph id="makeZoomToFit">
+	    <alt>Zoom To Fit</alt>
+	    <title>Zoom To Fit</title>
+	</graph>
+	<graph id="clearDiagram">
+	    <alt>Clear Graph</alt>
+	    <title>Clear Graph</title>
+	</graph>
+    <graph id="addClassGraph">
+	    <alt>Insert Class</alt>
+	    <title>Add Class</title>
+	</graph>
+	<graph id="addInterfaceGraph">
+	    <alt>Insert Interface</alt>
+	    <title>Add Interface</title>
+	</graph>
+	<graph id="addAbstractGraph">
+	    <alt>Insert Abstract</alt>
+	    <title>Add Abstract</title>
+	</graph>
+</translations>

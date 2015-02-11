@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+	<text id="title">Amália Project - Ferramentas de Modelação</text>
+	<text id="welcome">Bem-vindo</text>
+	<text id="h1">Projetos Recentes</text>
+	<text id="dialogoCriaProjectop">Criar novo Projeto</text>
+	<text id="dialogoCriaProjectopl">Nome do Ficheiro</text>
+	<text id="dialogoAbreProjetop" >Abrir Projeto do Browser</text>
+	<text id="dialogoAbreProjetol">Selecione projeto a abrir:</text>
+	<text id="dialogoAbreProjectoDiscop">Abrir projeto de ficheiro</text>
+	<text id="dialogoExportProjetp">Exportar projecto para XML</text>
+	<text id="dialogoExportProjetl">Selecione Projeto a Exportar</text>
+	<text id="dialogoEraseProjetp">Apagar Projeto</text>
+	<text id="dialogoEraseProjetl">Selecione Projeto a Apagar</text>
+	<text id="tipop">Diagrama de Casos de Usos</text>
+	<text id="tipo2p">Modelo de Domínio</text>
+	<text id="tipo3p">Amália Project</text>
+	<text id="dialogoFechaProjectop">Por favor, salve o projeto antes de fechar.Deseja continuar?</text>
+	<text id="idUseCaseH">Modelo de Caso de Uso</text>
+	<text id="floatingTreeh">Elementos do Projeto</text>
+	<text id="arvoreU">Casos de Uso</text>
+	<text id="arvoreA">Actores</text>
+	<text id="dialogo_casos_usol"> Caso de Uso:</text>
+	<text id="entityl">Entidade:</text>
+	<text id="masterl">Entidade Principal:</text>
+	<text id="dialogo_actorl">Nome do Actor:</text>
+	<text id="modelDomainh">Modelo de Domínio</text>
+	<text id="arvoreC">Classe</text>
+	<text id="arvoreAb">Classe Abstrata</text>
+	<text id="arvoreI">Interface</text>
+	<text id="dialogoAlteraClassel">Nome da Classe</text>
+	<text id="atributosClassel"> Atributos</text>
+	<text id="metodosClassel">Métodos</text>
+	<text id="dialogoAlteraInterfacel">Nome da Interface</text>
+	<text id="ligarClassesh"> Herança</text>
+	<text id="ligarClassesc"> Composição</text>
+	<text id="ligarClassesa"> Agregação</text>
+	<text id="ligarClassess"> Associação</text>
+	<text id="tipop3">Projecto Amália</text>
+	<text id="texto1">Amália Project é um projecto de P&amp;D a ter lugar na Escola Superior de Tecnologia e Gestão do Instituto Politécnico de Viana do Castelo.</text>
+	<text id="texto2">Amália significa <b>A</b>gile <b>M</b>odel-driven <b>A</b>pp<b>LI</b>c<b>A</b>tion Development Method and Tools.</text>
+ <text id="texto3">Informações adicionais:</text>
+	<text id="texto4">Desenvolvido por : Domingos Gomes e Rui Silva</text>
+	<text id="texto5">V1.0, Fevereiro 2015</text>
+	<text id="dialogoLimpaDiagramap"> Esta ação vai remover todos o elementos. Pretende Continuar?</text>
+	<text id="atributosClasseb"> Atributos</text>
+	<text id="metodosClasseb">Métodos</text>
+    <text id="metodosInterfaceb">Métodos</text>
+	<button id="btnCreateProject">
+			<value>Novo Projeto</value>
+			<title>Inicie o seu novo projeto aqui</title>
+	</button>
+	<button id="btnOpenProjectFromBrowser">
+			<value>Abrir Projeto</value>
+			<title>Carregar Projeto de browser</title>
+	</button>
+	<button id="btnOpenProjectFile">
+			<value>Abrir Ficheiro</value>
+			<title>Carregar Projeto de Ficheiro</title>
+	</button>
+	<button id="btnExportProject">
+			<value>Exportar Projeto</value>
+			<title>Exportar Projeto de</title>
+	</button>
+	<button id="btnApagarProjecto">
+			<value>Apagar Projeto</value>
+			<title>Apagar Projeto de Browser</title>
+	</button>
+	<button id="btnCancelarCriarProjecto">
+			<value>Cancelar</value>
+			<title></title>
+	</button>
+	<button id ="btnCriarProjecto">
+			<value>Criar</value>
+			<title></title>
+	</button>
+	<button id="btnCancelarAbrirProjecto">
+			<value>Cancelar</value>
+			<title></title>
+	</button>
+	<button id="btnAbrirProjecto">
+			<value>Abrir Projeto</value>
+			<title></title>
+	</button>
+	<button id="btnCancelaAbrirCasosDisco">
+			<value>Cancelar</value>
+			<title></title>
+	</button>
+	<button id="btnCancelarExportarProjecto">
+			<value>Cancelar</value>
+			<title></title>
+	</button>
+	<button id="btnExportarProjecto">
+			<value>Exportar Projeto</value>
+			<title></title>
+	</button>
+	<button id="btnCancelarEliminarProjecto">
+			<value>Cancelar</value>
+			<title></title>
+	</button>
+	<button id="btnEliminarProjecto">
+			<value>Apagar Projeto</value>
+			<title></title>
+	</button>
+	<button id="voltarPagPrincipal">
+            <value>Pagina Principal</value>
+	        <title></title>
+	</button>
+	<button id="btnthemes">
+	    <value>Temas</value>
+	    <title></title>
+	</button>
+	<button id="btnChangeStyleLight">
+	    <value>Tema claro</value>
+	    <title></title>
+    </button>
+    <button id="btnChangeStyleDark">
+        <value>Tema Escuro</value>
+        <title></title>
+    </button>
+    <button id="btnlanguage">
+        <value>Linguagens</value>
+        <title></title>
+    </button>
+    <button id="lng_english">
+        <value>English</value>
+        <title></title>
+    </button>
+    <button id="lng_portuguese">
+        <value>Português</value>
+        <title></title>
+    </button>
+    <button id="btnCancelaFecharProjeto">
+        <value>Cancelar</value>
+        <title></title>
+    </button>
+    <button id="btnFecharProjecto">
+        <value>Continuar</value>
+        <title></title>
+    </button>
+    <button id="btnClose">
+        <value>Fechar Projeto</value>
+        <title></title>
+    </button>
+    <button id="btnSaveProject">
+        <value>Guardar Projeto</value>
+        <title></title>
+    </button>
+    <button id="btnGravarProjeto">
+        <value>Guardar no Browser</value>
+        <title></title>
+    </button>
+    <button id="btnGuardarCasosUsoDisco">
+        <value>Guardar em ficheiro</value>
+        <title></title>
+    </button>
+    <button id="btnDeleteCasoUso">
+        <value>Eliminar</value>
+        <title></title>
+    </button>
+    <button id="btnDeleteActor">
+        <value>Eliminar</value>
+        <title></title>
+    </button>
+    <button id="cancelaLigacao">
+        <value>Cancelar</value>
+        <title></title>
+    </button>
+    <button id="ligacaoCasos">
+        <value> Associar Casos de Uso</value>
+        <title></title>
+    </button>
+    <button id="btnCancelarAlteraClasse">
+        <value>Cancelar</value>
+        <title></title>
+    </button>
+    <button id="btnAceitarAlterarClasse">
+        <value>OK</value>
+        <title></title>
+    </button>
+    <button id="btnEleminarAlterarClasse">
+        <value>Eliminar</value>
+        <title></title>
+    </button>
+    <button id="btnCancelarAlteraInterface">
+        <value>Cancelar</value>
+        <title></title>
+    </button>
+    <button id="btnAceitarAlterarInterface">
+        <value>OK</value>
+        <title></title>
+    </button>
+    <button id="btnEleminarAlterarInterface">
+        <value>Eliminar</value>
+        <title></title>
+    </button>
+    <button id="btnCancelaLigacaoClasses">
+        <value>Cancelar</value>
+        <title></title>
+    </button>
+    <button id="btnLigaClasses">
+        <value>Associar Classes</value>
+        <title></title>
+    </button>
+    <button id="btnCancelaLimpar">
+        <value>Não</value>
+        <title></title>
+    </button>
+    <button id="btnLimpar">
+        <value>Sim</value>
+        <title></title>
+    </button>
+    <button id="btnChangeActorName">
+    	<value>Alterar</value>
+    	<title></title>
+    </button>
+	<input id="nomeProjecto">Nome do Projeto</input>
+	<input id="nomeCasoUso">Nome do Caso de Uso</input>
+	<input id="nomeActor">Nome do Actor</input>
+	<input id="nomeDaClasse">Nome da Classe</input>
+	<input id="nomeDaInterface">Nome da Classe</input>
+	<graph id="addUseCaseGraph">
+	    <alt>Iserir um Caso de Uso</alt>
+	    <title>Adicionar um Caso de Uso</title>
+	</graph>
+	<graph id="addActorGraph">
+	    <alt>Inserir um Actor</alt>
+	    <title>Adicionar um Actor</title>
+	</graph>
+	<graph id="makeZoomToFit">
+	    <alt>Ajustar diagrama</alt>
+	    <title>Ajustar diagrama</title>
+	</graph>
+	<graph id="clearDiagram">
+	    <alt>Limpar o Grafico</alt>
+	    <title>Limpar o diagrama</title>
+	</graph>
+    <graph id="addClassGraph">
+	    <alt>Inserir uma Classe</alt>
+	    <title>Adicionar uma Classe</title>
+	</graph>
+	<graph id="addInterfaceGraph">
+	    <alt>Inserir uma Interface</alt>
+	    <title>Adicionar uma Interface</title>
+	</graph>
+	<graph id="addAbstractGraph">
+	    <alt>Inserir uma Abstrata</alt>
+	    <title>Adicionar uma Abstrata</title>
+	</graph>
+</translations>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="joint/joint.css" />
+    <link rel="stylesheet" href="css/Amalia.css" title="Dark" />
+    <link rel="Alternate stylesheet" href="css/Amalia_light.css" title="Light" />
+
+    <!-- Bibliotecas -->
+    <script src="jQuery/jquery-1.10.2.js"></script>
+    <script src="joint/joint.js"></script>
+    <script src="joint/joint.shapes.uml.js"></script>
+    <script src="Blob.js-master/Blob.js"></script>
+    <script src="FileSaver.js-master/FileSaver.js"></script>
+
+
+    <!-- Controlador -->
+    <script src="controladores/ControladorAmalia.js"></script>
+     <!-- video -->
+        <link rel="stylesheet" href="index_videolb/videolightbox.css" type="text/css" />
+
+			<link rel="stylesheet" type="text/css" href="index_videolb/overlay-minimal.css"/>
+			<script src="index_videolb/jquery.js" type="text/javascript"></script>
+			<script src="index_videolb/swfobject.js" type="text/javascript"></script>
+       <script src="index_videolb/jquery.tools.min.js" type="text/javascript"></script>
+			<script src="index_videolb/videolightbox.js" type="text/javascript"></script>
+
+
+        <!-- Right-Click Block-->
+		<script language="javascript">
+			document.onmousedown=disableclick;
+			status="No need for right-click! All options are available by double-click!";
+			function disableclick(event)
+			{
+			  if(event.button==2)
+			   {
+				alert(status);
+				return false;
+			   }
+			}
+		</script>
+
+		<!-- script de controlo dos menus dos botões-->
+		<script type="text/javascript">
+
+            var timeout         = 500;
+            var closetimer		= 0;
+            var ddmenuitem      = 0;
+
+            // open hidden layer
+            function mopen(id)
+            {
+                // cancel close timer
+                mcancelclosetime();
+
+                // close old layer
+                if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+                // get new layer and show it
+                ddmenuitem = document.getElementById(id);
+                ddmenuitem.style.visibility = 'visible';
+
+            }
+            // close showed layer
+            function mclose()
+            {
+                if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+            }
+
+            // go close timer
+            function mclosetime()
+            {
+                closetimer = window.setTimeout(mclose, timeout);
+            }
+
+            // cancel close timer
+            function mcancelclosetime()
+            {
+                if(closetimer)
+                {
+                    window.clearTimeout(closetimer);
+                    closetimer = null;
+                }
+            }
+
+            // close layer when click-out
+            document.onclick = mclose;
+            // -->
+            </script>
+
+
+    <!--IDE -->
+    <script src="ide/start.js"></script>
+
+    <!-- funções -->
+
+    <!-- Right-Click Block-->
+    <script language="javascript">
+        document.onmousedown = disableclick;
+        status = "No need for right-click! All options are available by double-click!";
+
+        function disableclick(event) {
+            if (event.button == 2) {
+                alert(status);
+                return false;
+            }
+        }
+    </script>
+    <title>Amalia Project - Modeling Tools</title>
+    <meta name="description" content="Amalia Project - Modeling Tools">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+    <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+
+<body onload="set_style_from_cookie()" oncontextmenu="return false">
+    <div>
+        <header>
+            <h1 id="title">Amalia Project - Modeling Tools</h1>
+            <p id="p0h"><b>A</b>gile <b>M</b>odel-driven <b>A</b>pp<b>LI</b>c<b>A</b>tion Development Method and Tools</p>
+        </header>
+    </div>
+    <div>
+        <table width="100%" align="center">
+            <tr>
+                <td height="15" colspan="3">
+                </td>
+                <tr>
+                    <td colspan="3">
+                        <div id="backtable">
+                            <table height="323" width="419" align="center">
+                                <tr>
+                                    <td id="td01" colspan="3">
+                                        <h1 id="welcome" align="center">Welcome Screen</h1>
+                                    </td>
+                                </tr>
+                                <tr height="34">
+                                    <td colspan="2">
+                                        <h2 id="h1" align="center"> Recent Projects</h2>
+                                    </td>
+                                </tr>
+                                <tr height="34">
+                                    <td id="i01" class="icon">
+                                    </td>
+                                    <td id="z01" width="194">
+                                    </td>
+                                    <td class="black" width="169" rowspan="1" align="center">
+                                    <input id="btnCreateProject" type="button" value="New Project" title="Start your new Project Here" />
+                                    </td>
+                                </tr>
+                                <tr height="34">
+                                    <td id="i02" class="icon">
+                                    </td>
+                                    <td id="z02" width="194">
+                                    </td>
+                                    <td align="center" width="169">
+                                        <input id="btnOpenProjectFromBrowser" type="button" value="Open Project" title="Load Project from browser" />
+                                    </td>
+                                </tr>
+                                <tr height="34">
+                                    <td id="i03" class="icon">
+
+                                    </td>
+                                    <td id="z03">
+                                    </td>
+                                    <td align="center">
+                                        <input id="btnOpenProjectFile" type="button" value="Open Project File" title="Load Project File" />
+
+                                    </td>
+                                </tr>
+                                <tr height="34">
+                                    <td id="i04" class="icon">
+                                    </td>
+                                    <td id="z04">
+                                    </td>
+                                    <td align="center">
+                                        <input id="btnExportProject" type="button" value="Export Project" title="Export Project From" />
+                                    </td>
+                                </tr>
+                                <tr height="34">
+                                    <td id="i05" class="icon">
+                                    </td>
+                                    <td id="z05">
+                                    </td>
+                                    <td class="black" rowspan="1" align="center">
+                                        <input id="btnApagarProjecto" type="button" value="Delete Project" title="Delete Project in Browser" />
+                                    </td>
+                                </tr>
+                                <tr height="34">
+                                    <td id="i06" class="icon">
+                                    </td>
+                                    <td id="z06">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="15" colspan="3">
+                    </td>
+                </tr>
+        </table>
+    </div>
+    <div>
+        <div id="dialogoCriaProjecto">
+            <div>
+               <form id="CriaProjecto">
+                <p id="dialogoCriaProjectop">Create a New Project</p>
+                <fieldset>
+                    <legend id="dialogoCriaProjectopl">File name</legend>
+                    <input id="nomeProjecto" type="text" name="nomeProjecto" placeholder="Project Name" />
+                </fieldset>
+                <input id="btnCancelarCriarProjecto" type="button" value="Cancel" />
+                <input type="submit" value="Create" />
+                </form>
+            </div>
+        </div>
+
+        <div id="dialogoAbreProjeto">
+            <div>
+                <p id="dialogoAbreProjetop">Open Project from Browser</p>
+                <fieldset>
+                    <legend id="dialogoAbreProjetol">Select Project to open:</legend>
+                    <select id="projetosDisponiveis">
+                        <!-- Local onde vão ficar os projectos disponiveis -->
+                    </select>
+                </fieldset>
+                <input id="btnCancelarAbrirProjecto" type="button" value="Cancel" />
+                <input id="btnAbrirProjecto" type="button" value="Open Project" />
+            </div>
+        </div>
+        <div id="dialogoAbreProjectoDisco">
+            <div>
+                <p id="dialogoAbreProjectoDiscop"></p>
+                <fieldset>
+                    <input type="file" id="ficheiroProjecto" />
+                </fieldset>
+                <input id="btnCancelaAbrirCasosDisco" type="button" value="Cancel" />
+            </div>
+        </div>
+
+        <div id="dialogoExportProjet">
+            <div>
+                <p id="dialogoExportProjetp">Export Project to XML</p>
+                <fieldset>
+                    <legend id="dialogoExportProjetl">Select Project to export:</legend>
+                    <select id="projetosDisponiveisParaExportar">
+                        <!-- Local onde vão ficar os projectos disponiveis -->
+                    </select>
+                </fieldset>
+                <input id="btnCancelarExportarProjecto" type="button" value="Cancel" />
+                <input id="btnExportarProjecto" type="button" value="Export Project" />
+            </div>
+        </div>
+
+        <div id="dialogoEraseProjet">
+            <div>
+                <p id="dialogoEraseProjetp">Delete Project</p>
+                <fieldset>
+                    <legend id="dialogoEraseProjetl">Select Project to delete:</legend>
+                    <select id="projetosDisponiveisParaEliminar">
+                        <!-- Local onde vão ficar os projectos disponiveis -->
+                    </select>
+                </fieldset>
+                <input id="btnCancelarEliminarProjecto" type="button" value="Cancel" />
+                <input id="btnEliminarProjecto" type="button" value="Delete Project" />
+            </div>
+        </div>
+
+        <div id="dialogoPrimeiraUtilizacao">
+            <div>
+                <fieldset id="fieldTutorial">
+                <legend id="idTutorialBox">Welcome</legend>
+                <p id="textTutorial"> It seems that is your first time in the Amalia Project.</p>
+                <br/>
+                <p id="textTutorial">If you want, you can play the tutorial now, or later,you can do it in the About Section.</p>
+                </fieldset>
+                <input id="btnBack" type ="button" value="Back to Main Page"/>
+                <input id="btnPlay" type ="button" value="Play Tutorial" class ="voverlay" href='http://www.youtube.com/v/JgqgxZSOq7I?autoplay=1&rel=0&enablejsapi=1&playerapiid=ytplayer'/>
+            </div>
+        </div>
+        <footer>
+            <p id="foot">
+                AmaliaIDE v1.0 - 2015
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>

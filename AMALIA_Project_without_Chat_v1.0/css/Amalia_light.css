@@ -1,0 +1,812 @@
+body {
+	font-family: Helvetica,Arial, sans-serif;
+    background: #EBEBEB;
+	height:600px;
+    margin:0;
+    padding:0;
+}
+
+header{
+	text-align:left;
+	color:white;
+	background:#EBEBEB;
+	padding-left:40px;
+	font-variant: small-caps;
+}
+
+#backtable{
+	background: white;
+}
+
+footer{
+	text-align:right;
+	font-size:x-small;
+	background:white;
+	color:black;
+	height:0px;
+}
+
+div.main{
+	padding: 5px 100px 150px;
+	text-align:center;
+}
+
+#modelo,
+div.main{
+	background: white;
+    display: inline-flex;
+    box-shadow: 10px 5px 5px rgba(0,0,0,0.5);
+    margin-left: 170px;
+    margin-top: 20px;
+    margin-right: 90px;
+}
+
+div.main input[type=button]{
+	padding: 10px 20px;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+
+input[type=button],
+input[type=submit],
+input[type=reset],
+#btnVoltarInicio,
+#btnClose,
+#btnSaveProject,
+#btnGravarProjeto,
+#btnGuardarCasosUsoDisco,
+#btnChangeStyleLight,
+#btnChangeStyleDark,
+#btnthemes,
+#btnlanguage,
+#lng_english,
+#lng_portuguese,
+#btnCallChat,
+#voltarPagPrincipal
+{
+	background: #f7f7f7;
+	padding:1px 5px;
+	color: #374343;
+	font-weight: bold;
+	border:1px;
+	border-color:#f7f7f7;
+	border-style:solid;
+}
+
+input[type=button]:hover,
+input[type=submit]:hover,
+input[type=reset]:hover,
+#btnVoltarInicio:hover,
+#btnClose:hover,
+#btnSaveProject:hover,
+#btnGravarProjeto:hover,
+#btnGuardarCasosUsoDisco:hover,
+#btnChangeStyleLight:hover,
+#btnChangeStyleDark:hover,
+#btnthemes:hover,
+#btnlanguage:hover,
+#lng_english:hover,
+#lng_portuguese:hover,
+#btnCallChat:hover,
+#voltarPagPrincipal:hover{
+	background:#374343;
+	color:#F7F7F7;
+/*	border: 1px;*/
+	border-color:#F7F7F7;
+/*	border-style:solid;*/
+}
+
+#controlCasosUso input[type=button],
+#controloDiagramaClasses input[type=button],
+#controlStage input[type=button],
+#btnVoltarInicio,
+#btnClose,
+#btnSaveProject,
+#btnGravarProjeto,
+#btnGuardarCasosUsoDisco,
+#btnChangeStyleLight,
+#btnChangeStyleDark,
+#btnthemes,
+#btnlanguage,
+#lng_english,
+#lng_portuguese,
+#btnCallChat,
+#voltarPagPrincipal
+{
+	padding: 5px 10px;
+	font-weight: bold;
+	background: #f7f7f7;
+	color:#374343;
+	font-variant: small-caps;
+	font-size: small;
+	border:0px;
+	border-bottom:1px solid #374343;
+	/*border-radius: 2px;*/
+}
+
+
+
+#controlCasosUso input[type=button]:hover,
+#controloDiagramaClasses input[type=button]:hover,
+#controlStage input[type=button]:hover{
+	background: #374343;
+	color: #f7f7f7;
+}
+
+
+a:link, a:visited{
+	color: #f7f7f7;
+	/*font-weight: bold;*/
+	text-decoration: none;
+}
+
+a:hover{
+	color: #777777;
+	font-weight: bolder;
+	text-decoration: none;
+}
+
+#dialogo,
+#dialogo_actor,
+#dialogo_casos_uso,
+#dialogo_associa_casos,
+#dialogoAlteraClasse,
+#dialogoAlteraInterface,
+#dialogoAssociaClasses,
+#dialogoMostarXMLClasses,
+#dialogoMostarXMLCasos,
+#dialogoGravarDiagrama,
+#dialogoAtribuirNomeDiagrama,
+#dialogoAbreDiagrama,
+#dialogoAbreDiagramaCasosDisco,
+#dialogoAbreDiagramaClassesDisco,
+#dialogoGravaDiaClassesDisco,
+#dialogoCriaProjecto,
+#dialogoAbreProjeto,
+#dialogoAbreProjectoDisco,
+#dialogoFechaProjecto,
+#dialogoGravaDiaCasosDisco,
+#dialogoExportProjet,
+#dialogoEraseProjet,
+#dialogoFechaProjecto,
+#dialogoLimpaDiagrama{
+     display: none;
+     position: absolute;
+     left: 0px;
+     top: 0px;
+     width:100%;
+     height:70%;
+     text-align:center;
+     z-index: 1000;
+     background-color: transparent;
+}
+
+#dialogo div ,
+#dialogo_actor div:first-child,
+#dialogo_casos_uso div,
+#dialogo_associa_casos div,
+#dialogoAlteraClasse div:first-child,
+#dialogoAlteraInterface div:first-child,
+#dialogoAssociaClasses div,
+#dialogoMostarXMLClasses div,
+#dialogoMostarXMLCasos div,
+#dialogoGravarDiagrama div,
+#dialogoAtribuirNomeDiagrama div,
+#dialogoAbreDiagrama div,
+#dialogoAbreDiagramaCasosDisco div,
+#dialogoAbreDiagramaClassesDisco div,
+#dialogoGravaDiaClassesDisco div,
+#dialogoCriaProjecto div,
+#dialogoAbreProjeto div,
+#dialogoAbreProjectoDisco div,
+#dialogoGravaDiaCasosDisco div,
+#dialogoFechaProjecto div,
+#dialogoExportProjet div,
+#dialogoEraseProjet div,
+#dialogoFechaProjecto div,
+#dialogoLimpaDiagrama div
+{
+     width:320px;
+     margin: 120px auto;
+     background-color: #fff;
+     border:1px solid #000;
+     border-radius: 5px;
+     box-shadow: 5px 5px 5px #374343;
+     padding:15px;
+     text-align:center;
+
+}
+#dialogoMostarXMLClasses div,
+#dialogoMostarXMLCasos div{
+	 width:800px;
+}
+
+#xmlClasses,
+#xmlCasos{
+	width: 750px;
+	height:500px;
+}
+
+fieldset{
+	border-radius: 5px;
+	font-size: small;
+	text-align: left;
+}
+
+fieldset input[type=text]{
+	width: 260px;
+}
+
+fieldset select{
+	width: 100%;
+}
+
+
+#ferramentas{
+	/*position: relative;
+	left:0px;
+	top:20px;
+	width: 120px;
+	*/
+	float:right;
+	width:120px;
+	background-color:#374343;
+	color: #F7F7F7;
+	padding: 2px;
+	text-align:center;
+	font-variant: small-caps;
+	font-size: small;
+	z-index: 500;
+}
+
+/* Codigo eleborado para a formatacao da tabela */
+
+/*table ,td, tr{
+	font-family: Helvetica,Arial, sans-serif;
+	border: 1px grey;
+    border-collapse: collapse;
+	/*margin-top: 50px;
+	margin-bottom:50px;*/
+
+
+/*div >div{background-color:#FFFFFF;}*/
+
+.black{
+	border-left-color: 1px #000000;
+	border-collapse:collapse;
+}
+td{
+	padding: 0px;
+
+
+}
+
+
+
+p{
+	font-size:11px;
+	text-align:center;
+}
+.icon{
+	height: 20px;
+	width: 40px;
+}
+
+h3{
+    font-size: 10px;
+    text-align: center;
+    color: #434647;
+}
+h2{
+	font-size:14px;
+}
+
+#td01{
+	background-color:#EBEBEB;
+}
+h1{
+	color:#434647;
+}
+#z01,#z03,#z05,#i01,#i03,#i05{
+	background-color:#DADADA;
+}
+
+/*#el{
+	height: "50px";
+}*/
+
+#p0h{
+	text-align: right;
+	padding-right: 15px;
+    	color: #434647;
+}
+
+
+/*Adapted from the source code in http://www.thecssninja.com/css/css-tree-menu*/
+
+/* CSS Tree menu styles */
+#tree{
+	vertical-align: top;
+}
+
+
+
+ol.tree
+{
+	padding: 0 0 0 30px;
+	width: 120px;
+	font-family: Helvetica !important;
+}
+	li
+	{
+		position: relative;
+		margin-left: -15px;
+		list-style: none;
+	}
+	li.fileUC
+	{
+/*		margin-left: -1px !important;*/
+		font-weight: normal !important;
+		font-size: 11px !important;
+	}
+        /*TODO Proceder às alterações necessárias para cada um dos tipos de diagramas*/
+		li.fileUC a
+		{
+			background: url(img/document.png) 0 0 no-repeat;
+/*			color: #F9F9F9;*/
+			padding-left: 21px;
+			text-decoration: none;
+			display: block;
+		}
+		li.fileUC a[href *= '.pdf']	{ background: url(img/document.png) 0 0 no-repeat; }
+		li.fileUC a[href *= '.html']	{ background: url(img/document.png) 0 0 no-repeat; }
+		li.fileUC a[href $= '.css']	{ background: url(img/document.png) 0 0 no-repeat; }
+		li.fileUC a[href $= '.js']	{ background: url(img/document.png) 0 0 no-repeat; }
+    li.fileAT
+        {
+    /*		margin-left: -1px !important;*/
+            font-weight: normal !important;
+            font-size: 11px !important;
+        }
+            /*TODO Proceder às alterações necessárias para cada um dos tipos de diagramas*/
+            li.fileAT a
+            {
+                background: url(img/actortb.png) 0 0 no-repeat;
+/*                color: #F9F9F9;*/
+                padding-left: 21px;
+                text-decoration: none;
+                display: block;
+            }
+            li.fileAT a[href *= '.pdf']	{ background: url(img/actortb.png) 0 0 no-repeat; }
+            li.fileAT a[href *= '.html']	{ background: url(img/actortb.png) 0 0 no-repeat; }
+            li.fileAT a[href $= '.css']	{ background: url(img/actortb.png) 0 0 no-repeat; }
+            li.fileAT a[href $= '.js']	{ background: url(img/actortb.png) 0 0 no-repeat; }
+    li.fileCL
+        {
+    /*		margin-left: -1px !important;*/
+            font-weight: normal !important;
+            font-size: 11px !important;
+        }
+            /*TODO Proceder às alterações necessárias para cada um dos tipos de diagramas*/
+            li.fileCL a
+            {
+                background: url(img/Classtb.png) 0 0 no-repeat;
+/*                color: #F9F9F9;*/
+                padding-left: 21px;
+                text-decoration: none;
+                display: block;
+            }
+            li.fileCL a[href *= '.pdf']	{ background: url(img/Classtb.png) 0 0 no-repeat; }
+            li.fileCL a[href *= '.html']	{ background: url(img/Classtb.png) 0 0 no-repeat; }
+            li.fileCL a[href $= '.css']	{ background: url(img/Classtb.png) 0 0 no-repeat; }
+            li.fileCL a[href $= '.js']	{ background: url(img/Classtb.png) 0 0 no-repeat; }
+    li.fileAB
+            {
+        /*		margin-left: -1px !important;*/
+                font-weight: normal !important;
+                font-size: 11px !important;
+            }
+                /*TODO Proceder às alterações necessárias para cada um dos tipos de diagramas*/
+                li.fileAB a
+                {
+                    background: url(img/Abstracttb.png) 0 0 no-repeat;
+/*                    color: #F9F9F9;*/
+                    padding-left: 21px;
+                    text-decoration: none;
+                    display: block;
+                }
+                li.fileAB a[href *= '.pdf']	{ background: url(img/Abstracttb.png) 0 0 no-repeat; }
+                li.fileAB a[href *= '.html']	{ background: url(img/Abstracttb.png) 0 0 no-repeat; }
+                li.fileAB a[href $= '.css']	{ background: url(img/Abstracttb.png) 0 0 no-repeat; }
+                li.fileAB a[href $= '.js']	{ background: url(img/Abstracttb.png) 0 0 no-repeat; }
+    li.fileIT
+            {
+        /*		margin-left: -1px !important;*/
+                font-weight: normal !important;
+                font-size: 11px !important;
+            }
+                /*TODO Proceder às alterações necessárias para cada um dos tipos de diagramas*/
+                li.fileIT a
+                {
+                    background: url(img/Interfacetb.png) 0 0 no-repeat;
+/*                    color: #F9F9F9;*/
+                    padding-left: 21px;
+                    text-decoration: none;
+                    display: block;
+                }
+                li.fileIT a[href *= '.pdf']	{ background: url(img/Interfacetb.png) 0 0 no-repeat; }
+                li.fileIT a[href *= '.html']	{ background: url(img/Interfacetb.png) 0 0 no-repeat; }
+                li.fileIT a[href $= '.css']	{ background: url(img/Interfacetb.png) 0 0 no-repeat; }
+                li.fileIT a[href $= '.js']	{ background: url(img/Interfacetb.png) 0 0 no-repeat; }
+	.arvore input
+	{
+		position: absolute;
+		left: 0;
+		margin-left: 0;
+		opacity: 0;
+		z-index: 2;
+		cursor: pointer;
+		height: 2em;
+		width: 1em;
+		top: 0;
+	}
+		li input + ol
+		{
+			background: url(img/toggle-small-expand.png) 40px 0 no-repeat;
+			margin: -0.938em 0 0 -44px; /* 15px */
+			height: 1.5em;
+		}
+		li input + ol > li { display: none; margin-left: -14px !important; padding-left: 1px; }
+	li label
+	{
+		background: url(img/folder-horizontal.png) 15px 1px no-repeat;
+		cursor: pointer;
+		display: block;
+		padding-left: 37px;
+		font-size: 12px !important;
+        color: #434647;
+	}
+
+	li input:checked + ol
+	{
+		background: url(img/toggle-small.png) 40px 5px no-repeat;
+		margin: -1.25em 0 0 -44px; /* 20px */
+		padding: 1.563em 0 0 80px;
+		height: auto;
+	}
+		li input:checked + ol > li { display: block; margin: 0 0 0.125em;  /* 2px */}
+		li input:checked + ol > li:last-child { margin: 0 0 0.063em; /* 1px */ }
+
+/* Toolbar */
+.floating-menu{
+	right: 0%;
+	position:fixed;
+	background:white;
+	border-radius: 0px;
+	width:49px;
+	z-index:100;
+	top: 40%;
+}
+
+
+.floating-menu h3{
+	display:block;
+	margin:0 0.5em;
+}
+
+/* Floating Tree */
+.floating-tree{
+    left: 0%;
+    position: fixed;
+    background:#BCBCBC;
+	border-radius: 0px;
+	width:170px;
+	z-index:100;
+	top: 150px;
+}
+
+#sddm
+{	margin: 10;
+	padding: 0;
+	z-index: 30}
+
+#sddm li
+{	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	font: bold 11px arial}
+
+#sddm li input
+{	display: block;
+	margin: 0 1px 0 0;
+	text-align: center;
+	text-decoration: none}
+
+#btnClose,
+#btnSaveProject,
+#btnGravarProjeto,
+#btnGuardarCasosUsoDisco,
+#btnChangeStyleLight,
+#btnChangeStyleDark,
+#btnthemes,
+#btnlanguage,
+#lng_english,
+#lng_portuguese,
+#btnCallChat,
+#voltarPagPrincipal
+
+{
+width: 160px;
+
+}#sddm div
+{	position: absolute;
+	visibility: hidden;
+	margin: 0;
+	padding: 0;
+	background: #EAEBD8;
+	border: 1px solid #5970B2}
+
+	#sddm div input
+	{	position: relative;
+		margin: 0;
+		text-align: left;
+        width: 160px;
+		}
+
+
+#stage_elipse {
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	left: 15px;
+	top: 45px;
+	color: #f7f7f7;
+	font: 400 30px HelveticaNeue;
+	right: 457px;
+}
+
+
+
+#blockIcons {
+	position: relative;
+	left: 0;
+	right: 0;
+	height: 450px;
+}
+
+#ucText {
+	position: absolute;
+	display: block;
+	top: 250px;
+	bottom: 107px;
+	left: 35px;
+	right: 457px;
+	color: #374343;
+	font: 400 30px Helvetica;
+	margin-bottom: auto;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: auto;
+	word-wrap: break-word;
+	width: 258px;
+}
+
+
+
+#dmText {
+	position: absolute;
+	display: block;
+	top: 380px;
+	bottom: 16px;
+	left: 235px;
+	right: 181px;
+	margin-bottom: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	color: #374343;
+	font: 400 30px Helvetica;
+	width: 210px;
+}
+
+#nextfolder {
+	position: absolute;
+	display: block;
+	top: 48px;
+	bottom: 249px;
+	right: 39px;
+	left: 421px;
+	margin-bottom: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+}
+
+
+
+#controlStage {
+	height: 28px;
+}
+
+#addClassGraph {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#addInterfaceGraph {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#addAbstractGraph {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#btnCreateProject {
+	width: 138px;
+}
+
+#btnOpenProjectFromBrowser {
+	width: 138px;
+}
+
+#btnOpenProjectFile {
+	width: 138px;
+}
+
+#btnExportProject {
+	width: 138px;
+}
+
+#btnApagarProjecto {
+	width: 138px;
+}
+
+#ucfolder {
+
+}
+
+#ucfolder {
+
+}
+
+/* ELEMENTOS DO STAGE */
+#roller *
+{
+	padding: 0px;
+	margin: 0px;
+
+}
+
+#roller *:focus
+{
+	outline: none;
+}
+
+a{
+	color: #666;
+}
+
+#roller body{
+	background: #eee;
+}
+
+#container{
+	background: #fff;
+	width: 800px;
+	padding: 30px;
+	min-height: 400px;
+	margin: 0 auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	box-shadow:  1px 1px 3px 0px rgba(0, 0, 0, 0.3);
+	overflow: auto;
+}
+
+p{
+
+	color: #444;
+	margin: 15px 0;
+}
+
+.scrollBox{
+	position: relative;
+	width: 400px;
+	height: 300px;
+	padding-right: 14px;
+	overflow: hidden;
+}
+
+.scrollbar{
+	position: absolute;
+	width: 6px;
+	height: 100%;
+
+	right: 0;
+}
+.scrollDragger{
+	position: absolute;
+	background: #ccc;
+	width: 6px;
+	height: 30px;
+
+	cursor: pointer;
+	margin-left: -1px;
+	z-index: 2;
+}
+.scrollRail{
+	position: absolute;
+	background: #eee;
+	width: 4px;
+	height: 100%;
+
+	z-index: 1;
+}
+
+ul{
+	list-style: none;
+	margin: 0px;
+}
+
+.fadein{
+	display: block;
+	float: left;
+	margin-bottom: 15px;
+	color: #fff;
+	font: 40px Edmondsans;
+	text-align: center;
+	padding: 75px 0px;
+	width: 100%;
+	height: 50px;
+
+	background: #35c52e; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMzNWM1MmUiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMGI5ODMwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-radial-gradient(center, ellipse cover,  #35c52e 0%, #0b9830 100%); /* FF3.6+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #35c52e 0%,#0b9830 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #35c52e 0%,#0b9830 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #35c52e 0%,#0b9830 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #35c52e 0%,#0b9830 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#35c52e', endColorstr='#0b9830',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+}
+
+#flux_carousel li{
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	width: 145px;
+	height: 145px;
+	background: #35c52e; /* Old browsers */
+
+}
+#flux_carousel ul:nth-child(2n+2) li{
+	background: #ccc;
+}
+
+.tab{
+	background: #108de4;
+	padding: 20px;
+	color: #eee;
+	border-radius: 5px;
+
+}
+
+#foot {
+	color: black;
+
+}
+
+#i02, #z02, #i04, #z04 {
+	color: #3C3F41;
+}
+
+#dialogoPrimeiraUtilizacao {
+	display: none;
+}
