@@ -20,9 +20,6 @@ var scrolltop = $(document).scrollTop();
 
 
 ControladorAmalia.ReadVariaveis();
-
-ControladorAmalia.ApplyCookie();
-
 //var b  =  element.scrollHeight - element.clientHeight;
 //var c  =  element.scrollWidth - element.clientWidth;
 
@@ -152,6 +149,11 @@ $(document).ready(function () {
 
     });
 
+
+    document.addEventListener('click:down', function (evt) {
+        alert("teste");
+    });
+
     //mouse up para estabelecer ligações entre os elementos na área de desenho
     paper.on('cell:pointerup', function (cellView, evt, x, y) {
 
@@ -206,7 +208,6 @@ $(document).ready(function () {
                     //ControladorAmalia.associaCasos(graph)
                     ControladorAmalia.toogleDialogoAssociaCasos(elementoCima.id, elementoBaixo.id);
 
-
                 }
                 // Um caso de uso ├® colocado sobre um ator. O ator participa no caso de uso.
                 if (elementoBaixo instanceof instanceActor && elementoCima instanceof instanceCasoUso) {
@@ -219,14 +220,15 @@ $(document).ready(function () {
 
                     ControladorAmalia.associaHeranca(graph, elementoCima.id, elementoBaixo.id);
                 }
-
             }
 
-
+            //RNPS
+            //Every element that is mouse down can be removed
+            //Objective: create an floating area in paper in the bottom left corner that when an element is over it, it will be removed
 
         }
 
-	zoomfit();
+
     });
 
     //Duplos clicks para mudar os momes dos objectos e alterar o tamanho dos casos de uso.
@@ -276,7 +278,9 @@ $(document).ready(function () {
 
     //Clear Diagram
     $("#clearDiagram").click(function (e) {
-        ControladorAmalia.toogleDialogoLimpaDiagrama();
+        graph.clear();
+        listaAtores = [];
+        listaCasos = [];
     });
 
 
@@ -286,11 +290,11 @@ $(document).ready(function () {
 
     // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Eventos dos dialogos <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//
     //Alterar o nome do Caso de Uso
-    $("#caso_uso").submit(function () {
+    $("#caso_uso").submit(function (e) {
 
         ControladorAmalia.setNomeCaso(graph);
         ControladorAmalia.toogleDialogoCasoUso("");
-        //e.preventDefault();
+        e.preventDefault();
 
     });
     //Remover Caos de uso do paper
@@ -328,7 +332,6 @@ $(document).ready(function () {
     $("#ligacaoCasos").click(function () {
         ControladorAmalia.associaCasos(graph);
         ControladorAmalia.toogleDialogoAssociaCasos("", "");
-	    zoomfit();
     });
     //Cancelar Associação entre casos de uso
     $("#cancelaLigacao").click(function () {
@@ -358,27 +361,14 @@ $(document).ready(function () {
     //DMMLG
     //Alteração de linguagem
 	$("#lng_english").click(function () {
-		  ControladorAmalia.MudaParaEN();
-		  ControladorAmalia.SetCookie("lang", "en");
-        //language ='languages/english.xml';
-        //ControladorAmalia.ActualizaVariaveis();
-        //location.reload();
+        language ='languages/english.xml';
+        ControladorAmalia.ActualizaVariaveis();
+        location.reload();
     });
     $("#lng_portuguese").click(function () {
-			ControladorAmalia.MudaParaPT();
-			ControladorAmalia.SetCookie("lang", "pt");
-        //language ='languages/portugues.xml';
-        //ControladorAmalia.ActualizaVariaveis();
-        //location.reload();
-    });
-    $("#btnLimpar").click(function(){
-		ControladorAmalia.toogleDialogoLimpaDiagrama();
-		graph.clear();
-        listaAtores = [];
-        listaCasos = [];
-	});
-    $("#btnCancelaLimpar").click(function(){
-		ControladorAmalia.toogleDialogoLimpaDiagrama();
+        language ='languages/portugues.xml';
+        ControladorAmalia.ActualizaVariaveis();
+        location.reload();
     });
 
     //Cancelar a abertura do ficheiro
@@ -421,6 +411,37 @@ $(document).ready(function () {
         ControladorAmalia.toggleDialogoGravaDiaCasosDisco(false);
     });
 
+    //Obter o diagrama do disco JSON
+    $("#btnRestaurarCasosUsoDisco").click(function () {
+        if (window.File && window.FileReader && window.FileList && window.Blob) {
+            //console.log("consigo ler");
+            ControladorAmalia.toggleDialogoAbreDiagramaCasosUsoDisco();
+        } else {
+            alert("Não é possível abir ficheiros do disco com este browser, utilizar a última versão do firefox(por exemplo) ");
+            console.log("Estou lixado");
+        }
+    });
+
+
+
+    //Cancelar a abertura do ficheiro
+    $("#btnCancelaAbrirCasosDisco").click(function () {
+        ControladorAmalia.toggleDialogoAbreDiagramaCasosUsoDisco();
+    });
+    //Cancelar a Gravação
+
+    $("#btnCancelaGravarDiagrama").click(function () {
+        ControladorAmalia.toogleDialogoGravarDiagrama("");
+    });
+    // Voltar ao inicío
+    $("#btnVoltarInicio").click(function () {
+        window.location.href = "stage.html";
+    });
+
+    //Gravar o diagrama
+    $("#btnGravarDiagrama").click(function () {
+        ControladorAmalia.gravarDiagramaNoBrowser(graph);
+    });
 
     //RNPS
     //botão para gravar o projecto
@@ -485,6 +506,47 @@ $(document).ready(function () {
     $("header").mouseenter(function () {
         $("#controlCasosUso").slideDown(200);
     });
+
+
+
+    //Função para ler ficheiros exp obtida de http://www.htmlgoodies.com/beyond/javascript/read-text-files-using-the-javascript-filereader.html#fbid=nRJ-e_eoFaY
+    function readSingleFile(evt) {
+        //Retrieve the first (and only!) File from the FileList object
+        var f = evt.target.files[0];
+
+        if (f) {
+            var r = new FileReader();
+            r.onload = function (e) {
+                var diagrama = e.target.result;
+                //console.log(diagrama);
+                console.log((f.name).split(".").pop());
+
+                //só consigo saber se o conteúdo é de um diagrama ou qualquer coisa feita com o joint.js
+                //eventualmente colocar no início do ficheiro um id qq
+                if ((f.name).split(".").pop() == "dcu") {
+                    if (diagrama.substr(0, diagrama.indexOf(":")) == '{"cells"') {
+                        //console.log("é um ficheiro com um modelo");
+                        graph.clear();
+                        graph.fromJSON(JSON.parse(diagrama));
+                        ControladorAmalia.toggleDialogoAbreDiagramaCasosUsoDisco();
+                    } else {
+                        alert("Ficheiro inválido");
+                        ControladorAmalia.toggleDialogoAbreDiagramaCasosUsoDisco();
+                    }
+                } else {
+                    //console.log("Ficheiro inválido");
+                    alert("Ficheiro inválido");
+                    ControladorAmalia.toggleDialogoAbreDiagramaCasosUsoDisco();
+                }
+                //console.log(  "conteudo: " + contents.substr(0,contents.indexOf(":")));
+            };
+            r.readAsText(f);
+        } else {
+            alert("Não foi possível abir o ficheiro");
+        }
+    }
+
+    //window.onbeforeunload = confirmExit;
 
 
 });

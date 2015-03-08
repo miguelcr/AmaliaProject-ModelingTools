@@ -21,6 +21,10 @@
 		<script src="Blob.js-master/Blob.js"></script>
 		<script src="FileSaver.js-master/FileSaver.js"></script>
 
+		<!--linguagens files-->
+		<link id ="languages "rel="languages" href="/languages/english.xml" title="English"/>
+		<link rel="languages" href="/languages/portugues.xml" title="Portugues"/>
+		
 		<!-- Modelos -->
 		<script src="modelos/Amalia.js"></script>
 
@@ -48,7 +52,7 @@
 		<script type="text/javascript">
 
             var timeout         = 500;
-            var closetimer		= 0;
+            var closetimer	= 0;
             var ddmenuitem      = 0;
 
             // open hidden layer
@@ -106,12 +110,12 @@
 
 <!-- in body tag is insert onload for set the style with cookie-->
 	<body onload="set_style_from_cookie()" oncontextmenu="return false">
-			<header>
-				<h1 id="idUseCaseH">Use Case Model</h1>
-                <p id="p0h"><b>A</b>gile <b>M</b>odel-driven <b>A</b>pp<b>LI</b>c<b>A</b>tion Development Method and Tools</p>
-			</header>
-			<p></p>
-			<div id="controlCasosUso">
+		<header>
+			<h1 id="idUseCaseH">Use Case Model</h1>
+                	<p id="p0h"><b>A</b>gile <b>M</b>odel-driven <b>A</b>pp<b>LI</b>c<b>A</b>tion Development Method and Tools</p>
+		</header>
+		<p></p>
+		<div id="controlCasosUso">
                 <ul id="sddm">
                     <li><input id="btnVoltarInicio" type="button" value="<" />
                     </li>
@@ -142,7 +146,7 @@
                         <input id="btnCallChat" type="button" class="button" onclick="javascript:void window.open('http://localhost:3000','1422053451651','width=310,height=590,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');return false;" value="Chat"/>
                     </li>
                 </ul>
-			</div>
+		</div>
 
 
 
@@ -177,63 +181,60 @@
 
 
 
-			<!-- Dialogo para mudar o nome do caso de uso -->
-			<div id="dialogo_casos_uso">
-     			<div>
-          			<form id="caso_uso">
-          				<p>
-          					<fieldset>
-          						<legend id="dialogo_casos_usol">Use Case:</legend>
+	    <!-- Dialogo para mudar o nome do caso de uso -->
+	    <div id="dialogo_casos_uso">
+     		<div>
+          	<form id="caso_uso">
+          		<p>
+          		<fieldset>
+          			<legend id="dialogo_casos_usol">Use Case:</legend>
                                 <input id="nomeCasoUso" name="Use Case Name" type="text" placeholder="Name of Use Case" />
                                 <input id="idCaso" type="hidden" value="" />
-                                </p>
+				<p></p>
                                 <label id="entityl" for="entity">Entity:</label>
                                 <input list="entityList" id="listaEntidades" autocomplete="off"/>
                                 <datalist id="entityList">
                                      <!-- Local onde vai ficar a lista de classes disponíveis -->
                                 </datalist>
-							  </p>
-							  <input id="idlcrud1" class="optCheckbox" type="checkbox" name="lcrud" value="l" checked="checked">L
-							  <input id="idlcrud2" class="optCheckbox" type="checkbox" name="lcrud" value="c" checked="checked">C
-							  <input id="idlcrud3" class="optCheckbox" type="checkbox" name="lcrud" value="r" checked="checked">R
-							  <input id="idlcrud4" class="optCheckbox" type="checkbox" name="lcrud" value="u" checked="checked">U
-							  <input id="idlcrud5" class="optCheckbox" type="checkbox" name="lcrud" value="d" checked="checked">D
-							  <p></p>
+				<p></p>
+				  <input id="idlcrud1" class="optCheckbox" type="checkbox" name="lcrud" value="l" checked="checked">L
+				  <input id="idlcrud2" class="optCheckbox" type="checkbox" name="lcrud" value="c" checked="checked">C
+				  <input id="idlcrud3" class="optCheckbox" type="checkbox" name="lcrud" value="r" checked="checked">R
+				  <input id="idlcrud4" class="optCheckbox" type="checkbox" name="lcrud" value="u" checked="checked">U
+				  <input id="idlcrud5" class="optCheckbox" type="checkbox" name="lcrud" value="d" checked="checked">D
+				<p></p>
                                 <label id="masterl" for="masterEntityList">Master Entity:</label>
                                 <input list="masterEntityList" id="listaEntidadesMaster" autocomplete="off" />
                                 <datalist id="masterEntityList" >
                                       <!-- Local onde vai ficar a lista de classes disponíveis -->
                                 </datalist>
-          					</fieldset>
-          				</p>
-          				<p>
+          		</fieldset>
+          		</p>
+          		<p>
+       			<input type="submit" value="OK" />
+       			<input id="btnDeleteCasoUso" type="button" value="Delete"/>
+       			</p>
+       		</form>
 
-          					<input type="submit" value="OK" />
-          					<input id="btnDeleteCasoUso" type="button" value="Delete"/>
-          				</p>
-          			</form>
+    		</div>
+	    </div>
 
-    			 </div>
-			</div>
-
-			<!-- Dialogo para mudar o nome do ator -->
-			<div id="dialogo_actor">
-     			<div>
-     				<form id="ator_nome">
-
-     					<fieldset>
-          						<legend id="dialogo_actorl">Actor name:</legend>
-     						<input id="nomeActor" name="nomeActor" type="text" placeholder="Name of Actor" />
-     						<input id="idActor" type="hidden" value="" />
-     					</fieldset>
-     					<p>
-
-     						<input id="btnChangeActorName" type="submit" value="Change" />
-     						<input id="btnDeleteActor" type="button" value="Delete"/>
-     					</p>
-     				</form>
-    			 </div>
-			</div>
+		<!-- Dialogo para mudar o nome do ator -->
+		<div id="dialogo_actor">
+     		    <div>
+     			<form id="ator_nome">
+     			<fieldset>
+          			<legend id="dialogo_actorl">Actor name:</legend>
+     				<input id="nomeActor" name="nomeActor" type="text" placeholder="Name of Actor" />
+     				<input id="idActor" type="hidden" value="" />
+     			</fieldset>
+     			<p>
+     				<input id="btnChangeActorName" type="submit" value="Change" />
+     				<input id="btnDeleteActor" type="button" value="Delete"/>
+     			</p>
+     			</form>
+    		    </div>
+		</div>
 
 			<!-- Dialogo para definir include ou extends -->
 			<div id="dialogo_associa_casos">
