@@ -1,7 +1,7 @@
 # AmaliaProject-ModelingTools
-Amalia Project - Modeling Tools
+Amália Project - Modeling Tools
 
-Amalia Project is a R&D project taking place at the
+Amália Project is a R&D project taking place at the
 Higher School of Technology and Management of the
 Polytechnic Institute of Viana do Castelo.
 Amalia stands for Agile Model-driven AppLIcAtion Development Method and Tools.
