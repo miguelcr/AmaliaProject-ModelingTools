@@ -64,10 +64,10 @@ ControladorAmalia ={
 
     GetCookie: function (cname) {
 			var name = cname + "=";
-		  console.log("NOME DO COOKIE:"+name);
+		  //console.log("NOME DO COOKIE:"+name);
 		  var ca = "";
 			var ca = document.cookie.split(';');
-		  console.log("ca = " + ca);
+		  //console.log("ca = " + ca);
 			for(var i=0; i<ca.length; i++) {
 				 var c = ca[i];
 				 while (c.charAt(0)==' ') c = c.substring(1);
@@ -78,20 +78,20 @@ ControladorAmalia ={
 
     ApplyCookie: function (){
 			var lang = ControladorAmalia.GetCookie("lang");
-			 console.log(lang);
+			 //console.log(lang);
 			 if(lang == ""){
-					console.log("NÂO ESTÀ DEFINIDO O COOKIE");
+					//console.log("NÂO ESTÀ DEFINIDO O COOKIE");
 					ControladorAmalia.MudaParaEN();
 					ControladorAmalia.SetCookie("lang", "en");
 			 } else {
 				  if(ControladorAmalia.GetCookie("lang") == "pt"){
 						 ControladorAmalia.MudaParaPT();
 						 ControladorAmalia.SetCookie("lang", "pt");
-						 console.log("mudou para PT");
+						 //console.log("mudou para PT");
 				  } else {
 						 ControladorAmalia.MudaParaEN();
 						 ControladorAmalia.SetCookie("lang", "en");
-						 console.log("mudou para EN");
+						 //console.log("mudou para EN");
 				  }
 			 }
 	  },
@@ -259,7 +259,7 @@ ControladorAmalia ={
 			var elementoCaso = caso.toJSON();
             var existe = false;
 			var nomeCaso = elementoCaso.attrs.text.text;
-            	console.log(nomeCaso);
+            	//console.log(nomeCaso);
 			//clear all checkboxes
 			$("#idlcrud1").prop('checked', false);
 			$("#idlcrud2").prop('checked', false);
@@ -326,7 +326,7 @@ ControladorAmalia ={
 
 		if (classe){
 			var classeJSON = classe.toJSON();
-            console.log(classe);
+            //console.log(classe);
 			$("#idClasse").val(classeJSON.id);
 			$("#nomeDaClasse").val(classeJSON.name);
 			//atributos
@@ -422,14 +422,14 @@ ControladorAmalia ={
 
         for(var i = 0; i < localStorage.length; i++){
             var nome = localStorage.key(i);
-            console.log(nome.substring(0,proj.length));
+            //console.log(nome.substring(0,proj.length));
             if(nome.substring(0,proj.length) == proj){
                 var opt = $("<option>");
                 opt.val(nome);
-                console.log(opt.val());
+                //console.log(opt.val());
                 opt.html(nome);
                 $("#projetosDisponiveisParaExportar").append(opt);
-                console.log($("#projetosDisponiveisParaExportar"));
+                //console.log($("#projetosDisponiveisParaExportar"));
             }
         }
         this.toogleDialogo("#dialogoExportProjet", false);
@@ -458,8 +458,8 @@ ControladorAmalia ={
     toogleDialogoMostraClasses: function (){
         var todos = [];
         todos = listaClasses.concat(listaAbstracts,listaInterfaces);
-        console.log(todos);
-        console.log(todos.length);
+        //console.log(todos);
+        //console.log(todos.length);
 	    $("#entityList").empty();
 	    $("#masterEntityList").empty();
         var html = "";
@@ -467,7 +467,7 @@ ControladorAmalia ={
             for(var i = 0; i < todos.length; i++){
              html += '<option value="' + todos[i] + '">';
             }
-		   console.log(html);
+		   //console.log(html);
             $("#entityList").append(html);
             $("#masterEntityList").append(html);
 
@@ -517,15 +517,15 @@ ControladorAmalia ={
             var existe = false;
             var objectAtor = new criaActor(idActor,nomeActor);
             for(var i=0; i<listaAtores.length ; i++){
-                console.log(i);
-                console.log(listaAtores);
+                //console.log(i);
+                //console.log(listaAtores);
                 if(listaAtores[i].id == idActor){
-                    console.log("entrou");
+                    //console.log("entrou");
                     listaAtores[i] = objectAtor;
                     existe = true;
-                    console.log("entrou ca dentro");
-                    console.log(existe);
-                    console.log(listaAtores);
+                    //console.log("entrou ca dentro");
+                    //console.log(existe);
+                    //console.log(listaAtores);
                 }
             }
                 if(!existe){
@@ -554,14 +554,18 @@ ControladorAmalia ={
         var entity=$("#listaEntidades").val();// entidade associada
         var masterentity= $("#listaEntidadesMaster").val();// entidade master associada
         var operation= [];// array para guardar o tipo de operação que é o caso de uso
+        
         // função para ver quais as funções que estão checked na checkbox no controlador
         $("input:checkbox[name=lcrud]:checked").each(function()
             {
                 // inserir no array operation, as operações que aquele caso de uso efectua
                 operation.push($(this).val());
-            console.log(operation);
+            //console.log(operation);
             });
         //console.log(operation);
+        
+        // definido o nome do caso daqui chamar alterações ao modelo
+		//registando novo nome e largura + altura
 		if (nomeCaso && idCaso){
 			// definido o nome do caso daqui chamar alterações ao modelo
 			//registando novo nome e largura + altura
@@ -571,7 +575,7 @@ ControladorAmalia ={
             caso.name = nomeCaso;
             // variavel auxiliar para verificar se o caso de uso já existe no array
             var existe = false;
-            console.log(existe);
+            //console.log(existe);
             // criar um novo caso de uso
             var casouso = new criaCaso(idCaso,nomeCaso,operation,null,entity,masterentity);
             //console.log(casouso);
@@ -582,9 +586,9 @@ ControladorAmalia ={
                     listaCasos[i] = casouso;
                     // o caso de uso existe
                     existe = true;
-                    console.log("entrou ca dentro");
-                    console.log(existe);
-                    console.log(listaCasos);
+                    //console.log("entrou ca dentro");
+                    //console.log(existe);
+                    //console.log(listaCasos);
                 }
             }
                 if(!existe){
@@ -606,6 +610,7 @@ ControladorAmalia ={
                 }
             }
         }},
+        
 	//Altera as características de uma classe
 	setClasse : function(graph, atributos, metodos){
 		//Obter o nome da classe
@@ -862,12 +867,23 @@ ControladorAmalia ={
 
 		var xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
 		//processamento
-        xml +='<project>\n';
+        xml +='<project version="AMALIA_MOBILE_0.1">\n';
         xml +='\t<name>'+projetoNome +'</name>\n';
-        xml +='\t<use_case_diagram>\n';
-		xml += ControladorAmalia._elementosToXML(graph,elementoscasos);
-		xml += ControladorAmalia._ligacoesToXML3(graph,ligacoescasos);
-        xml +='\t</use_case_diagram>\n';
+        
+        //Use Cases com distinção entre diagramas existentes e não existentes
+        
+        if (elementoscasos.length == 0){
+        	xml +='\t<use_case_diagram empty="true">\n';
+        	xml +='\t</use_case_diagram>\n';
+        }else{
+        
+        	xml +='\t<use_case_diagram empty="false">\n';
+			xml += ControladorAmalia._elementosToXML(graph,elementoscasos);
+			xml += ControladorAmalia._ligacoesToXML3(graph,ligacoescasos);
+        	xml +='\t</use_case_diagram>\n';
+        }
+        
+        //Modelo de Domínio
         xml +='\t<domain_model>\n';
         xml += ControladorAmalia._elementosToXML(graph2,elementosclasses);
 		xml += ControladorAmalia._ligacoesToXML3(graph2,ligacoesclasses);
@@ -914,13 +930,16 @@ ControladorAmalia ={
 			xml += '\t\t\t\t<type>interface</type>\n';
 		}
 		xml += '\t\t\t\t<name>' + el.name + "</name>\n";
+		
+		//Changed tag name from <atributes> and <atribute> to <attributes> and <attribute>
 		if (el.attributes){
             if((el.attributes).length !=0){
-			xml += "\t\t\t\t<atributes>\n";
+			xml += "\t\t\t\t<attributes>\n";
 			for (j = 0 ; j < (el.attributes).length ; j++){
-				xml += "\t\t\t\t\t<atribute>" + el.attributes[j] + "</atribute>\n";
+				//xml += "\t\t\t\t\t<attribute>" + el.attributes[j] + "</attribute>\n";
+				xml += ControladorAmalia._getAttributeTag ( el.attributes[j] );
 			}
-			xml += "\t\t\t\t</atributes>\n";
+			xml += "\t\t\t\t</attributes>\n";
             }
 		}
 		if (el.methods){
@@ -950,7 +969,12 @@ ControladorAmalia ={
                     if(listaCasos[a].id_caso == el.id){
                         if(listaCasos[a].operacao_caso.length!=0){
                         xml += '\t\t\t\t<operations>\n';
-                        for(var j=0;j<=listaCasos[a].operacao_caso.length; j++){
+                        
+                        //Acho que está aqui o problema com o aparecer de uma operação a mais <= passa para < para deixar de colocar 
+                        //operação extra vazia que aparecia sempre que se assinalava uma checkbox BUG # <operation></operation>
+                        
+                        
+                        for(var j=0;j < listaCasos[a].operacao_caso.length; j++){
                         xml +='\t\t\t\t\t<operation>';
                         if(listaCasos[a].operacao_caso[j] == 'l'){
                         xml += 'list';
@@ -1007,19 +1031,27 @@ ControladorAmalia ={
                 }
 				}else if (lig.type == "uml.Composition"){
 					xml +='\t\t\t\t<type>composition</type>\n';
-					xml +='\t\t\t\t<cadinalaty_destination>'+lig.labels[0].attrs.text.text+'</cardinalaty_destination>\n';
-					xml +="\t\t\t\t<cardinalaty_source>"+lig.labels[1].attrs.text.text+"</cardinalaty_source>\n";
+					
+					//changed cadinalaty to cardinality BUG - erro na estrutura do XML que fazia com que tag abrisse mas não fechasse.
+					//changed cardinalaty to cardinality - erro ortográfico
+					
+					
+					xml +='\t\t\t\t<cardinality_destination>'+lig.labels[0].attrs.text.text+'</cardinality_destination>\n';
+					xml +="\t\t\t\t<cardinality_source>"+lig.labels[1].attrs.text.text+"</cardinality_source>\n";
 				}else if (lig.type == "uml.Aggregation"){
-					xml +='\t\t\t\t<type>agregation</type>\n';
-					xml +='\t\t\t\t<cardinalaty_destination>'+lig.labels[0].attrs.text.text+'</cardinalaty_destination>\n';
-					xml +="\t\t\t\t<cardinalaty_source>"+lig.labels[1].attrs.text.text+"</cardinalaty_source>\n";
+					xml +='\t\t\t\t<type>aggregation</type>\n';
+					xml +='\t\t\t\t<cardinality_destination>'+lig.labels[0].attrs.text.text+'</cardinality_destination>\n';
+					xml +="\t\t\t\t<cardinality_source>"+lig.labels[1].attrs.text.text+"</cardinality_source>\n";
 				}else if(lig.type == "uml.Implementation"){
 					xml +='\t\t\t\t<type>implementation</type>\n';
 				}else if(lig.type == "uml.Association"){
 					if (lig.labels){
 							xml +='\t\t\t\t<type>association</type>\n';
-							xml +='\t\t\t\t<cardinalaty_destination>'+lig.labels[0].attrs.text.text+'</cardDestino>\n';
-							xml +="\t\t\t\t<cardinalaty_source>"+lig.labels[1].attrs.text.text+"</cardOrigem>\n";
+							
+							//mais caca a abertura e fecho não estavam ok
+							
+							xml +='\t\t\t\t<cardinality_destination>'+lig.labels[0].attrs.text.text+'</cardinality_destination>\n';
+							xml +="\t\t\t\t<cardinality_source>"+lig.labels[1].attrs.text.text+"</cardinality_source>\n";
 					}else{
 						xml +='\t\t\t\t<type>association</type>\n';
 					}
@@ -1032,6 +1064,53 @@ ControladorAmalia ={
 		xml += "\t\t</connections>\n";
 		return xml;
 	},
+	
+    // internal function to generate <attribute> tags that use visibility and type information
+    _getAttributeTag: function (attrString){
+    	
+    	var attrXML = "";
+    	attrXML += "\t\t\t\t\t<attribute" + ControladorAmalia._getAttrVisibility( attrString );
+    	attrXML += ControladorAmalia._getAttrType( attrString ) + ">";
+    	attrXML += ControladorAmalia._getAttrName( attrString ) + "</attribute>\n";
+    	return attrXML;
+    	
+    },
+    //internal function to get attribute visibility
+    _getAttrVisibility : function(attrString){
+    	var vis = " visibility=";
+    	
+    	if (attrString.indexOf( "+" ) != -1){
+    		return vis + "\"public\"";
+    	}else if (attrString.indexOf( "-" ) != -1){
+    		return vis + "\"private\"";
+    	}else if ( attrString.indexOf( "#" ) != -1){
+    		return vis + "\"protected\"";
+    	}else{
+    		// default value private
+    		return vis + "\"private\"";
+    	}
+    	
+    },
+    //internal function to get attribute type
+    _getAttrType: function ( attrString ){
+    
+    	var type = " type=";
+    	if ( attrString.indexOf ( ":" ) == -1 ){
+    		//default value String;
+    		return type + "\"string\"";
+    	}else{
+    		var attrSubstrings = attrString.split( ":" );
+    		return type + "\""+attrSubstrings[attrSubstrings.length - 1].trim()+"\"";
+    	}
+    },
+    //internal function to get attribute name
+    _getAttrName: function ( attrString ) {
+    	var name = attrString.split ( ":" )[0];
+    	
+    	return name.replace(/\+|-|#/g,"").trim();
+    },
+    
+    
     //RNPS-DMMLG
     //Gravar Projecto no Browser
     gravarProjectoNoBrowser: function(){
@@ -1076,7 +1155,7 @@ this.createClassesBundle(graph2, listaClasses, listaInterfaces, listaAbstracts);
             var blob = new Blob([diagramaCasosJSON], {
                 type: "text/plain;charset=utf-8"
             });
-            console.log(blob);
+            //console.log(blob);
         var name = projetoNome + ".proj";
             saveAs(blob, name);
         } catch (err) {
@@ -1109,9 +1188,10 @@ this.createClassesBundle(graph2, listaClasses, listaInterfaces, listaAbstracts);
         listaAbstracts=CLBundle.listaABS;
         this.ActualizaVariaveis();
     },
+	
 	//Abrir projeto atraves da lista dos projeto mais recentes
      abreProjecto2:function(nomeProjecto){
-         console.log(nomeProjecto);
+         //console.log(nomeProjecto);
     var projeto = localStorage.getItem(nomeProjecto);
         // fazer o parse para JSON
     var projetoS =JSON && JSON.parse(projeto) || $.parseJSON(projeto);
@@ -1129,6 +1209,7 @@ this.createClassesBundle(graph2, listaClasses, listaInterfaces, listaAbstracts);
         window.location.href = "stage.html";
 
 },
+	
 	//abre projeto para poder exportar (carrega as variaveis globais)
 	abrirProjetoParaExportar:function (){
         var nome = $("#projetosDisponiveisParaExportar option:selected").val();
@@ -1202,9 +1283,9 @@ this.createClassesBundle(graph2, listaClasses, listaInterfaces, listaAbstracts);
     //Passar diagrama de Casos de Uso para JSON
     diagramaCasoUsoParaJSON: function(){
         var modeloJSONCU = graph.toJSON();
-        console.log(modeloJSONCU);
+        //console.log(modeloJSONCU);
         diagramaCU = modeloJSONCU;
-        console.log(diagramaCU);
+        //console.log(diagramaCU);
     },
 
     //RNPS-DMMLG
@@ -1217,9 +1298,9 @@ this.createClassesBundle(graph2, listaClasses, listaInterfaces, listaAbstracts);
     //Passar diagrama de Casos de Uso para JSON
     diagramaClassesParaJSON: function(){
         var modeloJSONCL = graph2.toJSON();
-        console.log(modeloJSONCL);
+        //console.log(modeloJSONCL);
         diagramaCL = modeloJSONCL;
-        console.log(diagramaCL);
+        //console.log(diagramaCL);
     },
 
     //RNPS-DMMLG
@@ -1297,10 +1378,10 @@ function get_cookie ( cookie_name )
 //    return '' ;
 
 	var name = cookie_name + "=";
-		  console.log("NOME DO COOKIE:"+cookie_name);
+		  //console.log("NOME DO COOKIE:"+cookie_name);
 		  var ca = "";
 			var ca = document.cookie.split(';');
-		  console.log("ca = " + ca);
+		  //console.log("ca = " + ca);
 			for(var i=0; i<ca.length; i++) {
 				 var c = ca[i];
 				 while (c.charAt(0)==' ') c = c.substring(1);
