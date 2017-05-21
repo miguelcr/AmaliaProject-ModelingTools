@@ -10,6 +10,6 @@ More info: https://sites.google.com/site/amaliaproject/
 
 Project Coordinator: António Miguel Rosado da Cruz
 
-Main Developers: Rui Silva and Domingos Gomes
+Main Developers: Jorge Silva, Rui Silva and Domingos Gomes
 
 Amália IDE (Software Modeling Tool) V1.0, February 2015
